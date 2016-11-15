@@ -1,0 +1,253 @@
+/*!****************************
+ *                            *
+ *  Smart Alert               *
+ *                            *
+ *  Code: Lukas Prvy          *
+ *  Design: Pierre Borodin    *
+ *                            *
+ ******************************/
+
+
+/* =====[ DEFAULT THEME ]======================================================================== */
+
+
+
+/* -----[ OVERLAY ]------------------------------------------------------------------------------ */
+#smartAlert {
+	background: rgba(0, 0, 0, 0.5);
+	-pie-background: rgba(0, 0, 0, 0.5);
+	}
+
+
+
+/* -----[ BOX ]---------------------------------------------------------------------------------- */
+#smartAlertBox {
+	margin: 25px;
+    min-width: 270px;
+    max-width: 500px;
+	color: #fff;
+	font-family: Arial, Helvetica, Sans-serif;
+	font-size: 13px;
+	line-height: 15px;
+	border: 1px solid #454545;
+	background-color: #303030;
+	}
+
+	#smartAlert[data-type="prompt"] #smartAlertBox {
+		min-width: 310px;
+		}
+
+	#smartAlert[data-ie="9"] #smartAlertBox {
+		border-radius: 4px;
+		}
+
+	#smartAlert[data-ie="8"] #smartAlertBox,
+	#smartAlert[data-ie="7"] #smartAlertBox {
+		box-shadow: none;
+		}
+
+
+
+/* -----[ HEADER ]------------------------------------------------------------------------------- */
+#smartAlertHeader {
+	position: relative;
+	padding: 12px 12px 4px;
+	color: #fff;
+	font-size: 14px;
+	font-weight: normal;
+	text-transform: uppercase;
+	border-top: 1px solid #202020;
+	border-right: 1px solid #202020;
+	border-left: 1px solid #202020;
+	}
+	#smartAlertTitle {
+		color: #fff;
+		line-height: 15px;
+		}
+	#smartAlertClose {
+		position: absolute;
+		top: 17px;
+		right: 17px;
+		width: 12px;
+		height: 12px;
+		background: url(img/bttn_close.png) center center no-repeat;
+		}
+
+@media only screen and (min-device-pixel-ratio: 2),
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (-moz-min-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1) {
+
+    #smartAlertClose {
+        background: url(x2/bttn_close.png) center center no-repeat;
+		
+        -webkit-background-size: 	100%, 100%;
+        -moz-background-size: 		100%, 100%;
+        -o-background-size: 		100%, 100%;
+		background-size: 			100%, 100%;
+		}
+
+}
+
+#smartAlert[data-webkit] #smartAlertHeader,
+#smartAlert[data-opera] #smartAlertHeader {
+    border-radius: 2px 2px 0 0;
+	}
+
+
+
+/* -----[ ICONS ]-------------------------------------------------------------------------------- */
+#smartAlertIcon {
+    width: 67px;
+	}
+
+	#smartAlert[data-icon="info"] #smartAlertIcon 	{ background-image: url(img/info.png); }
+	#smartAlert[data-icon="confirm"] #smartAlertIcon { background-image: url(img/confirm.png); }
+	#smartAlert[data-icon="warning"] #smartAlertIcon { background-image: url(img/warning.png); }
+	#smartAlert[data-icon="error"] #smartAlertIcon 	{ background-image: url(img/error.png); }
+	#smartAlert[data-icon="prompt"] #smartAlertIcon 	{ background-image: url(img/prompt.png); }
+
+@media only screen and (min-device-pixel-ratio: 2),
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (-moz-min-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1) {
+
+    #smartAlertIcon {
+        -webkit-background-size: 	35px, 35px;
+        -moz-background-size: 		35px, 35px;
+        -o-background-size: 		35px, 35px;
+		background-size: 			35px, 35px;
+		}
+
+    #smartAlert[data-icon="info"] #smartAlertIcon 	{ background-image: url(x2/info.png); }
+    #smartAlert[data-icon="confirm"] #smartAlertIcon { background-image: url(x2/confirm.png); }
+    #smartAlert[data-icon="warning"] #smartAlertIcon { background-image: url(x2/warning.png); }
+    #smartAlert[data-icon="error"] #smartAlertIcon 	{ background-image: url(x2/error.png); }
+    #smartAlert[data-icon="prompt"] #smartAlertIcon 	{ background-image: url(x2/prompt.png); }
+
+}
+
+
+
+/* -----[ CONTENT ]------------------------------------------------------------------------------ */
+#smartAlertBody {
+	border-right: 1px solid #202020;
+	border-left: 1px solid #202020;
+	
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: 	border-box;
+	box-sizing: 		border-box;
+	}
+	#smartAlertContent {
+		padding: 26px 10px;
+		color: #fff;
+		line-height: 20px;
+		}
+		#smartAlert[data-icon="false"] #smartAlertContent {
+			padding-left: 52px;
+			}
+		#smartAlert[data-type="prompt"] #smartAlertContent {
+			padding: 16px 26px 16px 10px;
+			}
+		#smartAlert[data-type="prompt"][data-icon="false"] #smartAlertContent {
+			padding-left: 26px;
+			}
+
+		#smartAlertPrompt {
+			margin: 10px 0;
+			padding: 5px;
+			color: #fff;
+			font-family: sans-serif;
+			font-size: 13px;
+			line-height: 13px;
+			border: 1px solid #abb1c9;
+			background: none;
+			
+			-webkit-border-radius: 	3px;
+			-moz-border-radius: 	3px;
+			-ms-border-radius: 		3px;
+			-o-border-radius: 		3px;
+			border-radius: 			3px;
+			-webkit-box-shadow: 0 1px 3px rgba(2, 3, 3, 0.12) inset;
+			-moz-box-shadow: 	0 1px 3px rgba(2, 3, 3, 0.12) inset;
+			-ms-box-shadow: 	0 1px 3px rgba(2, 3, 3, 0.12) inset;
+			-o-box-shadow: 		0 1px 3px rgba(2, 3, 3, 0.12) inset;
+			box-shadow: 		0 1px 3px rgba(2, 3, 3, 0.12) inset;
+			}
+
+
+
+/* -----[ BUTTONS ]------------------------------------------------------------------------------ */
+#smartAlertButtons {
+	padding: 4px 12px 12px;
+	border-right: 1px solid #202020;
+	border-bottom: 1px solid #202020;
+	border-left: 1px solid #202020;
+	}
+
+#smartAlert[data-webkit] #smartAlertButtons,
+#smartAlert[data-opera] #smartAlertButtons,
+#smartAlert[data-ie="8"] #smartAlertButtons,
+#smartAlert[data-ie="7"] #smartAlertButtons {
+    border-radius: 0 0 2px 2px;
+	}
+
+.smartAlertButton {
+	margin: 0 0 0 11px;
+	padding: 6px 15px;
+	min-width: 32px;
+	cursor: pointer;
+	color: #575757;
+	font-size: 12px;
+	text-transform: uppercase;
+	border: 1px solid #ababab;
+	background: #e5e5e5;
+	background: rgb(229, 229, 229);
+	background: -moz-linear-gradient(top, #e5e5e5 0%, #f0f0f0 100%);
+	background: -webkit-gradient(linear, right bottom, right top, color-stop(0%, #e5e5e5), color-stop(100%, #f0f0f0));
+	background: -webkit-linear-gradient(top, #e5e5e5 0%, #f0f0f0 100%);
+	background: -o-linear-gradient(top, #e5e5e5 0%, #f0f0f0 100%);
+	background: -ms-linear-gradient(top, #e5e5e5 0%, #f0f0f0 100%);
+	background: linear-gradient(top, #e5e5e5 0%, #f0f0f0 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', endColorstr='#f0f0f0',GradientType=1 );
+	text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.20);
+	-webkit-border-radius: 	0;
+	-moz-border-radius: 	0;
+	border-radius: 			0;
+	-webkit-transition: border-color 0.3s ease-in-out,
+						-webkit-box-shadow 0.3s ease-in-out;
+	-moz-transition: 	border-color 0.3s ease-in-out,
+						-moz-box-shadow 0.3s ease-in-out;
+	-ms-transition: 	border-color 0.3s ease-in-out,
+						-ms-box-shadow 0.3s ease-in-out;
+	-o-transition: 		border-color 0.3s ease-in-out,
+						-o-box-shadow 0.3s ease-in-out;
+	transition: 		border-color 0.3s ease-in-out,
+						box-shadow 0.3s ease-in-out;
+	}
+	.smartAlertButton::-moz-focus-inner {
+		padding: 0;
+		border: 0 none;
+		}
+	
+	.smartAlertButton:hover {
+		border-color: #585858;
+		
+		-webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.10);
+		-moz-box-shadow: 	0 0 3px rgba(0, 0, 0, 0.10);
+		box-shadow: 		0 0 3px rgba(0, 0, 0, 0.10);
+		}
+	.smartAlertButton.smartAlertActive {
+		border: 1px solid #7991a8;
+		}
+	.smartAlertButton.smartAlertClick {
+		border: 1px solid #9ba8bc;
+		background-color: #dde3e9;
+		
+		background-image: linear-gradient(#d2d9e0, #ebeff5);
+		background-image: -webkit-linear-gradient(#d2d9e0, #ebeff5);
+		background-image: -moz-linear-gradient(#d2d9e0, #ebeff5);
+		background-image: -o-linear-gradient(#d2d9e0, #ebeff5);
+		background-image: -ms-linear-gradient(#d2d9e0, #ebeff5);
+		-pie-background: linear-gradient(#d2d9e0, #ebeff5);
+		}

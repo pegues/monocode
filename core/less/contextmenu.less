@@ -1,0 +1,126 @@
+﻿.b-m-mpanel {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 99997;
+	color: #cecece;
+	font-family: Arial, Helvetica, Sans-serif;
+	font-size: 12px;
+	border: 1px solid #00040a;
+	background: #494949;
+	
+	-webkit-font-smoothing: antialiased !important;
+	text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.10);
+	-webkit-border-radius: 	1px;
+	-moz-border-radius: 	1px;
+	border-radius: 			1px;
+	}
+
+	.b-m-item,
+	.b-m-idisable {}
+		.b-m-idisable {
+			color: #808080;
+			}
+
+		.b-m-ibody,
+		.b-m-arrow {
+			overflow: hidden;
+			text-overflow: ellipsis;
+			}
+			.b-m-mpanel span {
+				padding: 5px 5px 5px 30px;
+				display: block;
+				cursor: pointer;
+				}
+				span.contextmenuicon {
+					position: relative;
+					}
+
+					/* Icons */
+					span.contextmenuicon::after {
+						position: absolute;
+						top: 6px;
+						left: 10px;
+						font-family: 'FontAwesome';
+						font-size: 0.90em;
+						}
+						
+						span.contextmenuicon[data-alias="open"]::after 				{ content: '\f07c'; } /* Open */
+
+						//span.contextmenuicon[data-alias="new"]::after 			{ content: ''; } /* New File Parent */
+						span.contextmenuicon[data-alias="newFile"]::after 			{ content: '\f15b'; } /* New File */
+						span.contextmenuicon[data-alias="newFolder"]::after 		{ content: '\f07b'; } /* New Folder */
+						span.contextmenuicon[data-alias="newPHPFile"]::after 		{ content: '\f1c9'; } /* New PHP File */
+						span.contextmenuicon[data-alias="newPHPClass"]::after 		{ content: '\f1c9'; } /* New PHP Class */
+						span.contextmenuicon[data-alias="newHTML"]::after 			{ content: '\f0f6'; } /* New HTML File */
+						span.contextmenuicon[data-alias="newJavaScript"]::after 	{ content: '\f1c9'; } /* New JavaScript File */
+						span.contextmenuicon[data-alias="newTypeScript"]::after 	{ content: '\f1c9'; } /* New TypeScript File */
+						span.contextmenuicon[data-alias="newCoffeeScript"]::after 	{ content: '\f1c9'; } /* New CoffeeScript File */
+						span.contextmenuicon[data-alias="newXSLT"]::after 			{ content: '\f1c3'; } /* New XSLT File */
+						span.contextmenuicon[data-alias="newCSS"]::after 			{ content: '\f016'; } /* New CSS File */
+
+						span.contextmenuicon[data-alias="previewProject"]::after 	{ content: '\f00e'; } /* Preview Project */
+						span.contextmenuicon[data-alias="previewFile"]::after 		{ content: '\f002'; } /* Preview File */
+
+						span.contextmenuicon[data-alias="cut"]::after 				{ content: '\f0c4'; } /* Cut */
+						span.contextmenuicon[data-alias="copy"]::after 				{ content: '\f0c5'; } /* Copy */
+						span.contextmenuicon[data-alias="paste"]::after 			{ content: '\f0ea'; } /* Paste */
+						span.contextmenuicon[data-alias="delete"]::after 			{ content: '\f00d'; } /* Delete */
+						span.contextmenuicon[data-alias="duplicate"]::after 		{ content: '\f0c5'; } /* Duplicate */
+
+						//span.contextmenuicon[data-alias="refactor"]::after 		{ content: ''; } /* Refactor Parent */
+						span.contextmenuicon[data-alias="rename"]::after 			{ content: '\f031'; } /* Refactor > Rename */
+						span.contextmenuicon[data-alias="moveTo"]::after 			{ content: '\f045'; } /* Refactor > Move... */
+						span.contextmenuicon[data-alias="copyTo"]::after 			{ content: '\f24d'; } /* Refactor > Copy... */
+
+						span.contextmenuicon[data-alias="search"]::after 			{ content: '\f124'; } /* Search Files Here */
+						span.contextmenuicon[data-alias="uploadFiles"]::after 		{ content: '\f093'; } /* Upload Files */
+
+						span.contextmenuicon[data-alias="compress"]::after 			{ content: '\f1c6'; } /* Compress Selected File(s) */
+						span.contextmenuicon[data-alias="compressAs"]::after 		{ content: '\f1c6'; } /* Compress Selected File(s) As... */
+
+						span.contextmenuicon[data-alias="close"]::after 			{ content: ''; } /* Close This Tab */
+						span.contextmenuicon[data-alias="closeOthers"]::after 		{ content: ''; } /* Close All But This Tab */
+						span.contextmenuicon[data-alias="closeLeft"]::after 		{ content: ''; } /* Close to the Left */
+						span.contextmenuicon[data-alias="closeRight"]::after 		{ content: ''; } /* Close to the Right */
+						span.contextmenuicon[data-alias="closeAll"]::after 			{ content: ''; } /* Close All */
+
+			.b-m-arrow {
+				position: relative;
+				}
+				.b-m-idisable .b-m-arrow {
+					background: none;
+					}
+					.b-m-arrow span {}
+						.b-m-arrow span:after {
+							position: absolute;
+							top: 50%;
+							right: 5px;
+							left: auto;
+							margin-top: -6px;
+							color: #f0f0f0;
+							font-family: 'FontAwesome';
+							content: '\f0da';
+							}
+
+
+		.b-m-split {
+			margin: 0;
+			height: 1px;
+			font-size: 0;
+			border-bottom: 1px solid #595959;
+			background-color: #353535;
+			}
+			
+		.b-m-item img,
+		.b-m-ifocus img,
+		.b-m-idisable img {
+			margin-right: 8px;
+			}
+		.b-m-ifocus {
+			color: #f5b53c;
+			background-color: #262626;
+			}
+		.b-m-idisable img {
+			visibility: hidden;
+			}

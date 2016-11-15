@@ -1,0 +1,3351 @@
+/* ***************************************************************************************************
+
+	Description:	ScriptsConnect Code Editor: core styles
+
+	TABLE OF CONTENTS:
+	------------------
+		    I. Browser Resets
+		   II. Import Fonts
+		  III. Template Frame Styles
+		   IV. Header
+		    V. Navigation
+		   VI. Editor Region
+		  VII. Footer Region
+		 VIII. Sidebar Tools
+		   IX. Welcome Page
+		    X. Initialize Screen
+		   XI. Autocomplete
+		  XII. ACE Scrollbar
+		 XIII. Tab Frame
+		  XIV. Grid
+		   XV. Process Bar
+		  XVI. NotifyJS
+		 XVII. System Fullscreen Backdrop with Notice
+		XVIII. Footer Pane: Footer Feature Tabs
+		  XIX. Footer Pane: Search Results Pane
+		   XX. File Tree
+		  XXI. jQuery UI Dialogs
+		 XXII. Session Alert Notice
+
+   *************************************************************************************************** */
+
+/* *************************************************************************************************** */
+/* I. Browser Resets ********************************************************************************* */
+/* *************************************************************************************************** */
+html, body {
+	width: 100%;
+	height: 100%;
+	-webkit-font-smoothing: none;
+	-webkit-text-stroke: 0.0px;
+	}
+	body {
+		display: block;
+		min-width: 1px;
+		max-width: 10000px;
+		min-height: 1px;
+		max-height: 10000px;
+		color: #555;
+		font-family: Tahoma, Arial, Helvetica, Sans-serif;
+		font-size: 12px;
+		line-height: 1;
+		overflow: hidden;
+		background-color: #000;
+		}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4,
+h5, h6, p, blockquote, pre, a, abbr, acronym, address, big,
+cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small,
+strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt,
+dd, ol, ul, li, fieldset, form, label, legend, table, caption,
+tbody, tfoot, thead, tr, th, td, article, aside, canvas,
+details, embed, figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary, time, mark,
+audio, video {
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	border: 0;
+	}
+
+html, html a {
+	-webkit-font-smoothing: antialiased;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+	}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+    }
+
+ul, ol {
+	list-style: none;
+	}
+
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+	}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	}
+
+a {
+	text-decoration: none;
+	outline: 0 none;
+	}
+
+sup {
+	margin: 0;
+	padding: 0;
+	font-size: 10px;
+	line-height: 0;
+	}
+
+/* .clearfix, */
+.clear {
+	clear: both;
+	*zoom: 1;
+	margin: 0;
+	padding: 0;
+	display: block;
+	width: 0;
+	height: 0;
+	font-size: 0;
+	line-height: 0;
+	overflow: hidden;
+	outline: 0 none;
+	border: 0 none;
+	}
+
+input[type="submit"],
+input[type="button"],
+button::-moz-focus-inner {
+	padding: 0;
+	border: 0 none;
+	}
+
+input[type="submit"]:focus,
+input[type="button"]:focus {
+	outline: none;
+	}
+
+
+
+/* *************************************************************************************************** */
+/* II. Import Fonts ********************************************************************************** */
+/* *************************************************************************************************** */
+
+
+
+
+/* *************************************************************************************************** */
+/* III. Template Frame Styles ************************************************************************ */
+/* *************************************************************************************************** */
+div.wrapper {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: -webkit-box;
+	min-width: 0;
+	max-width: 10000px;
+	min-height: 0;
+	max-height: 10000px;
+	}
+	div.headertoolbar {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 10 !important;
+		min-width: 900px;
+		height: 31px;
+		min-height: 1px;
+		max-height: 10000px;
+		overflow: visible !important;
+		border-top: 1px solid #000;
+		border-bottom: 1px solid #000;
+		background-color: #303030;
+		
+		-webkit-transition: all cubic-bezier(0.1, 0.1, 0.25, 0.9) 0ms;
+		-webkit-transition: all cubic-bezier(0.1, 0.1, 0.25, 0.9) 0ms;
+		-ms-transition: 	all cubic-bezier(0.1, 0.1, 0.25, 0.9) 0ms;
+		-o-transition: 		all cubic-bezier(0.1, 0.1, 0.25, 0.9) 0ms;
+		transition: 		all cubic-bezier(0.1, 0.1, 0.25, 0.9) 0ms;
+		}
+	div.footertoolbar {
+		z-index: 5 !important;
+		background-color: #2c2c2c;
+		}
+
+
+
+/* *************************************************************************************************** */
+/* IV. Header **************************************************************************************** */
+/* *************************************************************************************************** */
+div.headertoolbar_inside {
+	/* border-top: 4px solid #49a8fa; */
+	}
+
+
+
+/* *************************************************************************************************** */
+/* V. Navigation ************************************************************************************* */
+/* *************************************************************************************************** */
+
+/* ******************************************************** */
+/* i. Editor Navitgation ********************************** */
+/* ******************************************************** */
+ul.sitenavigation {
+	margin-left: 0;
+	}
+	
+	ul.sitenavigation li {
+		position: relative;
+		}
+	
+	ul.sitenavigation li.parent {
+		display: block;
+		float: left;
+		color: #cecece;
+		font-size: 12px;
+		}
+		ul.sitenavigation a {
+			color: #cecece;
+			white-space: nowrap;
+			}
+		
+		/* Parent Items */
+		ul.sitenavigation a.parent.link {
+			display: block;
+			height: 29px;
+			border-right: 1px solid transparent;
+			border-left: 1px solid transparent;
+			
+			-webkit-transition: background-color 0.05s ease-in-out;
+			-moz-transition: 	background-color 0.05s ease-in-out;
+			-ms-transition: 	background-color 0.05s ease-in-out;
+			-o-transition: 		background-color 0.05s ease-in-out;
+			transition: 		background-color 0.05s ease-in-out;
+			}
+			
+			/* Remove Left Border of First Menu Item */
+			ul.sitenavigation li.parent:first-child > a.parent.link {
+				border-left: 0 none;
+				}
+			
+			ul.sitenavigation li.parent:hover a.parent.link {
+				border-right-color: #000;
+				border-left-color: #000;
+				background-color: #262626;
+				}
+			
+			ul.sitenavigation a.parent.link span {
+				padding: 0 7px;
+				display: block;
+				line-height: 27px;
+				}
+		
+		/* Submenu */
+		ul.sitenavdropdown {
+			position: absolute;
+			display: none;
+			top: 29px;
+			left: 0;
+			z-index: 20;
+			border: 1px solid #000;
+			background: #c3c3c3;
+			background: rgba(75, 75, 75, 0.99);
+			}
+			ul.sitenavigation li:hover > ul.sitenavdropdown {
+				/* display: block; */
+				
+				/* Click event added in sceditor.js */
+				}
+				
+				ul.sitenavigation.active > li.parent:hover > ul.sitenavdropdown.primary {
+					/* display: block; */
+					}
+				
+				/* Left CSS Control Dropdown of Level 2+ */
+				ul.sitenavigation li > ul.sitenavdropdown.primary li:hover > ul.sitenavdropdown {
+					display: block;
+					}
+				
+				/* Remove Left Border of First Dropdown */
+				ul.sitenavigation li.parent:first-child > ul.sitenavdropdown.primary {
+					border-left: 0 none;
+					}
+				
+			/*
+			body.jsnavactive ul.sitenavigation li:hover > ul.sitenavdropdown { display: none; }
+			body.jsnavactive ul.sitenavigation li > ul.sitenavdropdown.active { display: block; }
+			*/
+			
+			ul.sitenavdropdown li.first 	{ padding-top: 0; }
+			ul.sitenavdropdown li.last 	{ padding-bottom: 0; }
+			
+			/* Navigation Separator */
+			ul.sitenavdropdown li.navsep {
+				margin: 0;
+				height: 1px;
+				border-top: 1px solid #353535;
+				background-color: #565656;
+				}
+				ul.sitenavdropdown li.navsep span {}
+			
+			ul.sitenavdropdown li.child {
+				position: relative;
+				}
+				ul.sitenavdropdown li.child a {
+					padding: 8px 15px;
+					display: block;
+					color: #f1f1f1;
+					
+					-webkit-transition: color 0.05s ease-in-out,
+										background-color 0.05s ease-in-out;
+					-moz-transition: 	color 0.05s ease-in-out,
+										background-color 0.05s ease-in-out;
+					-ms-transition: 	color 0.05s ease-in-out,
+										background-color 0.05s ease-in-out;
+					-o-transition: 		color 0.05s ease-in-out,
+										background-color 0.05s ease-in-out;
+					transition: 		color 0.05s ease-in-out,
+										background-color 0.05s ease-in-out;
+					}
+					ul.sitenavdropdown li.child:hover > a {
+						color: #f5b53c;
+						background-color: #262626;
+						}
+						
+					li.child a.subnav {
+						background-image: url("../images/subnav_arrow_right.png");
+						background-position: 92% 50%;
+						background-repeat: no-repeat;
+						}
+					
+					ul.sitenavdropdown li.child span.label_wo_key {}
+					
+					ul.sitenavdropdown li.child span.label_w_key {
+						display: block;
+						float: left;
+						}
+					ul.sitenavdropdown li.child span.label_key {
+						display: block;
+						float: right;
+						}
+				
+				ul.sitenavdropdown li.child ul.sitenavdropdown {
+					top: 0;
+					left: 99.8%;
+					z-index: 999;
+					}
+				
+				/* Disabled Status */
+				ul.sitenavdropdown  li.disable,
+				ul.sitenavdropdown  li.disable:hover {
+					background-color: #404040;
+					}
+					ul.sitenavdropdown li.disable a,
+					ul.sitenavdropdown li.disable a:hover {
+						color: #6f6f6f;
+						cursor: default;
+						background-color: #404040;
+						}
+				
+				/* Dropdown Widths */
+				/* Main Level */
+				ul.sitenavdropdown.dropdownfile 		{ width: 200px; }
+				ul.sitenavdropdown.dropdownedit 		{ width: 190px; }
+				ul.sitenavdropdown.dropdownselection 	{ width: 255px; }
+				ul.sitenavdropdown.dropdownfind 		{ width: 190px; }
+				ul.sitenavdropdown.dropdownview 		{ width: 190px; }
+				ul.sitenavdropdown.dropdowngoto 		{ width: 155px; }
+				ul.sitenavdropdown.dropdowntools 		{ width: 205px; }
+				ul.sitenavdropdown.dropdownhelp 		{}
+				ul.sitenavdropdown.dropdownpreview 		{ width: 225px; }
+					
+					/* Additional Levels */
+					ul.sitenavdropdown.dropdownrecent 		{}
+					ul.sitenavdropdown.dropdownline 		{ width: 150px; }
+					ul.sitenavdropdown.dropdowncomment 		{ width: 225px; }
+					ul.sitenavdropdown.dropdownconvertcase 	{ width: 165px; }
+					ul.sitenavdropdown.dropdownthemes 		{}
+					ul.sitenavdropdown.dropdownfontsize 	{ width: 205px; }
+					ul.sitenavdropdown.dropdownwrap 		{}
+
+
+
+/* ******************************************************** */
+/* ii. Editor My Account Navigation *********************** */
+/* ******************************************************** */
+ul.editoruseracclist {
+	float: right;
+	}
+	ul.editoruseracclist li.parent {
+		position: relative;
+		display: block;
+		float: left;
+		color: #cecece;
+		}
+		
+		/* For Username and My Account */
+		ul.editoruseracclist li.parent .topitem {
+			display: block;
+			height: 29px;
+			font-size: 12px;
+			line-height: 29px;
+			}
+			ul.editoruseracclist li.parent.username {}
+			ul.editoruseracclist li.parent.myaccount {}
+				ul.editoruseracclist li.parent.username span.topitem,
+				ul.editoruseracclist li.parent.myaccount a.topitem {
+					padding: 0 10px;
+					}
+				ul.editoruseracclist li.parent.username span.topitem {}
+				ul.editoruseracclist li.parent.myaccount a.topitem {
+					color: #cecece;
+					border-left: 1px solid #000;
+					
+					-webkit-transition: color 0.05s ease-in-out,
+										background-color 0.05s ease-in-out;
+					-moz-transition: 	color 0.05s ease-in-out,
+										background-color 0.05s ease-in-out;
+					-ms-transition: 	color 0.05s ease-in-out,
+										background-color 0.05s ease-in-out;
+					-o-transition: 		color 0.05s ease-in-out,
+										background-color 0.05s ease-in-out;
+					transition: 		color 0.05s ease-in-out,
+										background-color 0.05s ease-in-out;
+					}
+					ul.editoruseracclist li.parent.myaccount:hover > a.topitem {
+						color: #f5b53c;
+						background-color: #0f0f0f;
+						background-color: rgba(15, 15, 15, 0.95);
+						}
+					
+					ul.editoruseracclist li.parent.myaccount a.topitem i {
+						padding-left: 5px;
+						}
+		
+		/* Dropdown */
+		ul.editoruseraccdropdown {
+			position: absolute;
+			display: none;
+			right: 0;
+			z-index: 20;
+			width: 300px;
+			font-size: 13px;
+			border: 1px solid #000;
+			background: #c3c3c3;
+			background: rgba(75, 75, 75, 0.99);
+			}
+			ul.editoruseracclist li.parent:hover > ul.editoruseraccdropdown {
+				/* display: block; */
+				
+				/* Click event added in sceditor.js */
+				}
+			
+			ul.editoruseraccdropdown li.first 	{ padding-top: 3px; }
+			ul.editoruseraccdropdown li.last 	{}
+			
+			ul.editoruseraccdropdown li.navsep {
+				margin: 0 3px;
+				height: 1px;
+				border-top: 1px solid #353535;
+				background-color: #565656;
+				}
+				ul.editoruseraccdropdown li.navsep span {}
+				
+				ul.editoruseraccdropdown li.child a {
+					padding: 8px 15px;
+					display: block;
+					color: #f1f1f1;
+					
+					-webkit-transition: color 0.05s ease-in-out,
+										background-color 0.05s ease-in-out;
+					-moz-transition: 	color 0.05s ease-in-out,
+										background-color 0.05s ease-in-out;
+					-ms-transition: 	color 0.05s ease-in-out,
+										background-color 0.05s ease-in-out;
+					-o-transition: 		color 0.05s ease-in-out,
+										background-color 0.05s ease-in-out;
+					transition: 		color 0.05s ease-in-out,
+										background-color 0.05s ease-in-out;
+					}
+					ul.editoruseraccdropdown li.child:hover > a {
+						color: #f5b53c;
+						background-color: #262626;
+						}
+						ul.editoruseraccdropdown li i {
+							padding-right: 5px;
+							}
+			
+			/* My Account Info */
+			div.usrmyaccinfo {
+				padding: 5px 15px;
+				}
+				
+				/* Trial Info */
+				div.usrmyaccinfo p.trialinfo {
+					margin: 0 0 5px;
+					padding: 5px 10px;
+					display: block;
+					color: #393939;
+					background-color: #ebebeb;
+					
+					-webkit-border-radius: 	3px;
+					-moz-border-radius: 	3px;
+					border-radius: 			3px;
+					}
+				
+				div.usrmyaccinfo h3 {
+					padding: 0 0 10px;
+					font-size: 18px;
+					font-weight: normal;
+					}
+				div.usrmyaccinfo p {
+					padding: 5px 0;
+					font-size: 13px;
+					line-height: 15px;
+					}
+				div.usrmyaccinfo a {
+					color: #f1f1f1;
+					text-decoration: underline;
+					
+					-webkit-transition: color 0.05s ease-in-out;
+					-moz-transition: 	color 0.05s ease-in-out;
+					-ms-transition: 	color 0.05s ease-in-out;
+					-o-transition: 		color 0.05s ease-in-out;
+					transition: 		color 0.05s ease-in-out;
+					}
+					div.usrmyaccinfo a:hover {
+						color: #f5b53c;
+						}
+
+
+
+/* *************************************************************************************************** */
+/* VI. Editor Region ********************************************************************************* */
+/* *************************************************************************************************** */
+
+/* ******************************************************** */
+/* i. Editor ********************************************** */
+/* ******************************************************** */
+div.editor_holder {
+	position: relative;
+	float: left;
+	width: 85%;
+	height: 100%;
+	
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: 	border-box;
+	box-sizing: 		border-box;
+	}
+	div.editor_inside {
+		position: relative;
+		padding: 0;
+		height: 100%;
+		overflow: hidden;
+		background-color: #454545;
+		
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: 	border-box;
+		box-sizing: 		border-box;
+		}
+		
+		/* Editor File Tab List */
+		div.editortabbar {
+			position: relative;
+			top: 0px;
+			left: 0;
+			right: 0;
+			z-index: 1;
+			height: 26px;
+			border-bottom: 1px solid #000;
+			background-color: #2c2c2c;
+			}
+			
+			/* New Tab Button */
+			div.newtabitem {
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 99;
+				margin: 0;
+				border-right: 1px solid #000;
+				
+				text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.50);
+				}
+				div.newtabitem span {
+					margin: 0;
+					padding: 0 10px;
+					display: block;
+					height: 26px;
+					color: #cbcbcb;
+					font-size: 13px;
+					line-height: 26px;
+					cursor: pointer;
+					background-color: #1c1c1c;
+					background-color: rgba(0, 0, 0, 0.30);
+					
+					-webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15) inset;
+					-moz-box-shadow: 	0 3px 5px rgba(0, 0, 0, 0.15) inset;
+					box-shadow: 		0 3px 5px rgba(0, 0, 0, 0.15) inset;
+					-webkit-transition: color 0.05s ease-in-out,
+										background-color 0.05s ease-in-out;
+					-moz-transition: 	color 0.05s ease-in-out,
+										background-color 0.05s ease-in-out;
+					-ms-transition: 	color 0.05s ease-in-out,
+										background-color 0.05s ease-in-out;
+					-o-transition: 		color 0.05s ease-in-out,
+										background-color 0.05s ease-in-out;
+					transition: 		color 0.05s ease-in-out,
+										background-color 0.05s ease-in-out;
+					}
+					div.newtabitem span::after {
+						font-family: 'FontAwesome';
+						content: '\f067';
+						}
+
+					div.newtabitem:hover span {
+						color: #f5b53c;
+						background-color: #000;
+						background-color: rgba(0, 0, 0, 0.95);
+						}
+			
+			/* Tab Control Arrows */
+			ul#tabcontrolarrows {
+				position: absolute;
+				top: 0;
+				right: 0;
+				float: right;
+				background-color: #1c1c1c;
+				}
+				li.tabcontrolarrow {
+					position: relative;
+					display: block;
+					float: left;
+					color: #cbcbcb;
+					background-color: #1c1c1c;
+					
+					-webkit-transition: background-color 0.05s ease-in-out;
+					-moz-transition: 	background-color 0.05s ease-in-out;
+					-ms-transition: 	background-color 0.05s ease-in-out;
+					-o-transition: 		background-color 0.05s ease-in-out;
+					transition: 		background-color 0.05s ease-in-out;
+					}
+					li.tabcontrolarrow > span {
+						margin: 0;
+						padding: 0 10px;
+						display: block;
+						height: 26px;
+						font-size: 13px;
+						line-height: 26px;
+						cursor: pointer;
+						border-left: 1px solid #000;
+						
+						-webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15) inset;
+						-moz-box-shadow: 	0 3px 5px rgba(0, 0, 0, 0.15) inset;
+						box-shadow: 		0 3px 5px rgba(0, 0, 0, 0.15) inset;
+						-webkit-transition: color 0.05s ease-in-out;
+						-moz-transition: 	color 0.05s ease-in-out;
+						-ms-transition: 	color 0.05s ease-in-out;
+						-o-transition: 		color 0.05s ease-in-out;
+						transition: 		color 0.05s ease-in-out;
+						}
+						li.tabcontrolarrow:hover {
+							color: #f5b53c;
+							background-color: #0f0f0f;
+							}
+						li.tabcontrolarrow > span:hover {
+							color: #f5b53c;
+							}
+					
+					/* Tab Dropdown Files List */
+					ul.tabdropdownfileslist {
+						position: absolute;
+						right: -1px;
+						z-index: 999;
+						display: none;
+						width: auto;
+						font-size: 11px;
+						
+						border: 1px solid #000;
+						background-color: #4b4b4b;
+						background-color: rgba(75, 75, 75, 0.99);
+						}
+						
+						/* Trigger */
+						li.tabcontrolarrow.arrowdown:hover ul.tabdropdownfileslist {
+							/* display: block; */
+							
+							/* Click event added in sceditor.js */
+							}
+							li.tabcontrolarrow.arrowdown.active ul.tabdropdownfileslist {
+								
+								}
+						
+						/* Dropdown Files List Styling */
+						ul.tabdropdownfileslist li {
+							display: block;
+							}
+							
+							/* File Items List & System Items List */
+							ul.tabdropdownfileslist li.tabfileitem,
+							ul.tabdropdownfileslist li.tabsystemitem {
+								padding: 7px 15px;
+								color: #f1f1f1;
+								cursor: pointer;
+								white-space: nowrap;
+								
+								-webkit-transition: color 0.05s ease-in-out,
+													background-color 0.05s ease-in-out;
+								-moz-transition: 	color 0.05s ease-in-out,
+													background-color 0.05s ease-in-out;
+								-ms-transition: 	color 0.05s ease-in-out,
+													background-color 0.05s ease-in-out;
+								-o-transition: 		color 0.05s ease-in-out,
+													background-color 0.05s ease-in-out;
+								transition: 		color 0.05s ease-in-out,
+													background-color 0.05s ease-in-out;
+								}
+								ul.tabdropdownfileslist li.tabfileitem:hover,
+								ul.tabdropdownfileslist li.tabsystemitem:hover {
+									color: #f5b53c;
+									background-color: #262626;
+									}
+								
+								ul.tabdropdownfileslist li.tabfileitem.first,
+								ul.tabdropdownfileslist li.tabsystemitem.first {}
+								
+								ul.tabdropdownfileslist li.tabfileitem.last,
+								ul.tabdropdownfileslist li.tabsystemitem.last {}
+							
+							/* Separator */
+							ul.tabdropdownfileslist li.navsep {
+								margin: 0 3px;
+								height: 1px;
+								border-top: 1px solid #353535;
+								background-color: #565656;
+								}
+								ul.tabdropdownfileslist li.navsep span {}
+			
+                        /* Editor File Tabs List */
+                        div#editorfilelistwrapper {
+                            margin: 0 0 0 29px;
+                            float: left;
+                            overflow: hidden;
+                            position: relative;
+                            
+                            /* width: calc(100% - 30px - 79px); */ /* Syntax for .css files */
+
+                            width: ~"-webkit-calc(100% - 30px - 79px)";
+                            width:    ~"-moz-calc(100% - 30px - 79px)";
+                            width:         ~"calc(100% - 30px - 79px)";
+                            height: 27px;
+                            }
+                            ul#editorfilelist {
+								position: absolute;
+								left: 0;
+								margin: 0;
+								padding: 0;
+								width: 10000px;
+
+								-webkit-touch-callout: 	none;
+								-webkit-user-select: 	none;
+								-khtml-user-select: 	none;
+								-moz-user-select: 		none;
+								-ms-user-select: 		none;
+								user-select:        	none;
+								}
+								ul#editorfilelist li {
+									position: relative;
+									margin: 0;
+									display: block;
+									float: left;
+									height: 27px;
+									}
+
+									li.filelistborder.left {
+										display: none !important;
+										width: 1px;
+										border-right: 1px solid #111;
+										}
+									li.filelistborder.right {
+										display: none !important;
+										width: 1px;
+										border-left: 1px solid #454545;
+										}
+
+									ul#editorfilelist li.selected {}
+									ul#editorfilelist li.unselected {}
+
+									ul#editorfilelist li.first {}
+									ul#editorfilelist li.last {}
+
+									ul#editorfilelist li.saved {}
+									ul#editorfilelist li.unsaved {}
+
+									/* Styling for each list element */
+									ul#editorfilelist div.tabbttn {
+										margin: 0;
+										display: block;
+										height: 26px;
+										color: #fff;
+										font-size: 12px;
+										line-height: 23px;
+										cursor: pointer;
+										border-left: 1px solid #000;
+										background-color: #2c2c2c;
+										
+										text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.60);
+										-webkit-transition: color 0.05s ease-in-out,
+															background-color 0.05s ease-in-out;
+										-moz-transition: 	color 0.05s ease-in-out,
+															background-color 0.05s ease-in-out;
+										-ms-transition: 	color 0.05s ease-in-out,
+															background-color 0.05s ease-in-out;
+										-o-transition: 		color 0.05s ease-in-out,
+															background-color 0.05s ease-in-out;
+										transition: 		color 0.05s ease-in-out,
+															background-color 0.05s ease-in-out;
+										}
+
+										/* Remove left border from first list element */
+										ul#editorfilelist li:first-child div.tabbttn {
+											border-left: 0 none;
+											}
+
+										/* Add right border to last list element */
+										ul#editorfilelist li:last-child div.tabbttn {
+											border-right: 1px solid #000;
+											}
+
+										ul#editorfilelist div.tabbttn a {
+											color: #fff;
+
+											-webkit-transition: color 0.05s ease-in-out;
+											-moz-transition: 	color 0.05s ease-in-out;
+											-ms-transition: 	color 0.05s ease-in-out;
+											-o-transition: 		color 0.05s ease-in-out;
+											transition: 		color 0.05s ease-in-out;
+											}
+										ul#editorfilelist li.first div.tabbttn {} 
+										ul#editorfilelist li.last div.tabbttn { border-right: 1px solid #000; }
+
+										ul#editorfilelist li:hover div.tabbttn,
+										ul#editorfilelist li.selected div.tabbttn,
+										ul#editorfilelist li.ui-state-active div.tabbttn {
+											color: #f5b53c;
+											background-color: #0f0f0f;
+											}
+											ul#editorfilelist li:hover div.tabbttn a,
+											ul#editorfilelist li.selected div.tabbttn a,
+											ul#editorfilelist li.ui-state-active div.tabbttn a {
+												color: #f5b53c;
+												}
+
+											ul#editorfilelist li.selected div.tabbttn,
+											ul#editorfilelist li.ui-state-active div.tabbttn {
+												-webkit-box-shadow: 0 5px 15px rgba(222, 222, 222, 0.05) inset;
+												-moz-box-shadow: 	0 5px 15px rgba(222, 222, 222, 0.05) inset;
+												box-shadow: 		0 5px 15px rgba(222, 222, 222, 0.05) inset;
+												}
+											
+											/* Unsaved Icon */
+											ul#editorfilelist div.tabbttn span.unsaved {
+												font-size: 9px;
+												}
+												ul#editorfilelist div.tabbttn span a {
+													padding: 0 30px 0 10px;
+													display: block;
+													height: 26px;
+													}
+												ul#editorfilelist li.loading a.close {
+													display: none;
+													}
+												ul#editorfilelist li.loading .loader {
+													position: absolute;
+													top: 50%;
+													right: 10px;
+													margin-top: -12px;
+													color: #fff;
+													}
+
+									ul#editorfilelist span.name {
+										display: block;
+										}
+									ul#editorfilelist a.close {
+										position: absolute;
+										top: 50%;
+										right: 8px;
+										margin: -9px 0 0;
+										display: block;
+										width: 16px;
+										height: 16px;
+										color: #cfcfcf;
+										font-size: 0.70em;
+
+										-webkit-border-radius: 	1px;
+										-moz-border-radius: 	1px;
+										border-radius: 			1px;
+										-webkit-transition: background-color 0.05s ease-in-out;
+										-moz-transition: 	background-color 0.05s ease-in-out;
+										-ms-transition: 	background-color 0.05s ease-in-out;
+										-o-transition: 		background-color 0.05s ease-in-out;
+										transition: 		background-color 0.05s ease-in-out;
+										}
+										ul#editorfilelist a.close:after {
+											position: absolute;
+											top: 0.10em;
+											left: 0.325em;
+											font-family: 'FontAwesome';
+											content: '\f00d';
+											}
+										ul#editorfilelist a.close:hover {
+											color: #f0f0f0;
+											background-color: #2d2d2d;
+											}
+									
+									
+		div.editorsurround { margin-top: 0; }
+			.editorcoder {}
+				.ace_editor {
+					position: relative !important;
+					margin: auto;
+					display: block;
+					width: 100%;
+					height: 100%;
+					background-color: #454545;
+					}
+				/*
+				.scrollmargin {
+					height: 100px;
+					text-align: center;
+					}
+				*/
+				
+				div.ace_scroller {}
+				
+				div.ace_scrollbar {}
+					div.ace_scrollbar.ace_scrollbar-h {}
+					div.ace_scrollbar.ace_scrollbar-v {}
+
+
+
+/* ******************************************************** */
+/* ii. File Manager *************************************** */
+/* ******************************************************** */
+div.filemanager_holder {
+	position: relative;
+	float: left;
+	width: 15%;
+	height: 100%;
+	
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: 	border-box;
+	box-sizing: 		border-box;
+	}
+	div.filemanager_inside {
+		position: relative;
+		padding: 58px 0 0;
+		height: 100%;
+		overflow: hidden;
+		
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: 	border-box;
+		box-sizing: 		border-box;
+		}
+		div.filemanager_toolbar {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 26px;
+			border-top: 0 none;
+			border-bottom: 1px solid #000;
+			background-color: #2c2c2c;
+			}
+			
+			ul.optionstoollist {
+				width: 10000px;
+				}
+				ul.optionstoollist li {
+					display: block;
+					float: left;
+					}
+					div.optionstoolitem {
+						margin: 0 0 0 5px;
+						cursor: pointer;
+						}
+						div.optionstoolitem span {
+							display: none;
+							}
+						div.optionstoolitem i {
+							padding: 0 3px;
+							display: block;
+							height: 25px;
+							color: #cecece;
+							font-size: 18px;
+							line-height: 26px;
+							overflow: hidden;
+							
+							-webkit-transition: color 0.05s ease-in-out;
+							-moz-transition: 	color 0.05s ease-in-out;
+							-ms-transition: 	color 0.05s ease-in-out;
+							-o-transition: 		color 0.05s ease-in-out;
+							transition: 		color 0.05s ease-in-out;
+							}
+							div.optionstoolitem:hover i,
+							div.optionstoolitem.active i {
+								color: #f5b53c;
+								}
+						
+						/* Options */
+						ul.itemtoolbaroptions {
+							position: absolute;
+							top: 0;
+							right: 10px;
+							z-index: 5;
+							margin: 0;
+							padding: 0;
+							float: right;
+							list-style-type: none;
+							}
+							li.toolbaroptionsitem {
+								margin: 0 0 0 3px;
+								padding: 0 5px;
+								display: block;
+								float: left;
+								cursor: pointer;
+								
+								-webkit-transition: color 0.05s ease-in-out;
+								-moz-transition: 	color 0.05s ease-in-out;
+								-ms-transition: 	color 0.05s ease-in-out;
+								-o-transition: 		color 0.05s ease-in-out;
+								transition: 		color 0.05s ease-in-out;
+								}
+								li.toolbaroptionsitem:hover > div.toolbaroptionitemicon i {
+									color: #f5b53c;
+									}
+								
+								li.toolbaroptionsitem.first {}
+								li.toolbaroptionsitem.last {}
+								
+								div.toolbaroptionitemicon {
+									position: relative;
+									}
+									div.toolbaroptionitemicon i {}
+								
+									ul.toolbaroptionitemlist {
+										position: absolute;
+										right: 0;
+										z-index: 2147483647;
+										margin: 0;
+										padding: 5px 0 0;
+										display: none;
+										width: 155px;
+										font-size: 11px;
+										}
+										div.toolbaroptionitemicon:hover > ul.toolbaroptionitemlist {
+											/* display: block; */
+											}
+										
+										ul.toolbaroptionitemlist li {
+											position: relative;
+											padding: 0 15px;
+											color: #f1f1f1;
+											text-align: right;
+											border: 1px solid #000;
+											border-width: 0 1px;
+											background-color: #4b4b4b;
+											
+											-webkit-transition: color 0.05s ease-in-out,
+																background-color 0.05s ease-in-out;
+											-moz-transition: 	color 0.05s ease-in-out,
+																background-color 0.05s ease-in-out;
+											-ms-transition: 	color 0.05s ease-in-out,
+																background-color 0.05s ease-in-out;
+											-o-transition: 		color 0.05s ease-in-out,
+																background-color 0.05s ease-in-out;
+											transition: 		color 0.05s ease-in-out,
+																background-color 0.05s ease-in-out;
+											}
+											ul.toolbaroptionitemlist li:first-child {
+												border-width: 1px 1px 0 1px;
+												}
+											ul.toolbaroptionitemlist li:last-child {
+												border-width: 0 1px 1px 1px;
+												}
+											
+											ul.toolbaroptionitemlist li i,
+											ul.toolbaroptionitemlist li span {
+												display: block;
+												}
+												ul.toolbaroptionitemlist li i {
+													position: absolute;
+													top: 7px;
+													left: 10px;
+													}
+												ul.toolbaroptionitemlist li span {}
+											
+											ul.toolbaroptionitemlist li:hover {
+												color: #f5b53c;
+												background-color: #262626;
+												}
+											
+											/* Workspace Selection Header */
+											li.workspaceselecttitle {
+												cursor: default;
+												}
+												li.workspaceselecttitle:hover {
+													color: #f1f1f1 !important;
+													background-color: #4b4b4b !important;
+													}
+											
+											/* Separator */
+											ul.toolbaroptionitemlist li.optsep {
+												padding: 0;
+												height: 1px;
+												border-top: 1px solid #353535;
+												background-color: #565656 !important;
+												}
+		
+		/* Toolbar Title */
+		div.filemanager_tooltitle {
+			position: absolute;
+			top: 27px;
+			left: 0;
+			padding: 0;
+			width: 100%;
+			height: 26px;
+			color: #f1f1f1;
+			font-size: 11.5px;
+			line-height: 25px;
+			border-top: 0 solid #000;
+			border-right: 0 solid #9d9d9d;
+			border-bottom: 1px solid #000;
+			background-color: #3f3f3f;
+			
+			text-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: 	border-box;
+			box-sizing: 		border-box;
+			}
+			div.filemanager_tooltitle div.tooltitlebarwrapper {
+				padding: 0 0 0 10px;
+				border-right: 1px solid #464646;
+				}
+		div.filemanager_titlesep {
+			position: absolute;
+			top: 53px;
+			left: 0;
+			width: 100%;
+			border-right: 0 solid #9d9d9d;
+			border-bottom: 1px solid #000;
+			background-color: #303030;
+			
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: 	border-box;
+			box-sizing: 		border-box;
+			}
+			div.filemanager_titlesep span {
+				display: block;
+				height: 3px;
+				border-top: 1px solid #5d5d5d;
+				}
+		div.filenavmain {
+			height: 100%;
+			overflow: auto;
+			overflow-x: auto;
+			overflow-y: auto;
+			border-right: 1px solid #464646;
+			background-color: #323232;
+			}
+
+
+
+/* ******************************************************** */
+/* iii. Left Col Manager Controls ************************* */
+/* ******************************************************** */
+div.leftcol_actions_control {
+	padding-left: 3px;
+	border-bottom: 1px solid #262626;
+	background-color: #3f3f3f;
+	}
+	ul.leftcolcontrolslist {
+		margin: 0;
+		padding: 0;
+		}
+		ul.leftcolcontrolslist li {
+			position: relative;
+			display: block;
+			float: left;
+			color: #cecece;
+			font-size: 15px;
+			}
+			ul.leftcolcontrolslist li.odd 		{}
+			ul.leftcolcontrolslist li.even 	{}
+			
+			ul.leftcolcontrolslist li.first 	{ margin-left: 3px; }
+			ul.leftcolcontrolslist li.last 	{}
+			
+			ul.leftcolcontrolslist li.connect 	{}
+			ul.leftcolcontrolslist li.add 		{}
+			ul.leftcolcontrolslist li.edit 	{}
+			ul.leftcolcontrolslist li.delete 	{}
+			ul.leftcolcontrolslist li.disabled {
+				color: #686868;
+				}
+				ul.leftcolcontrolslist li.disabled i {
+					cursor: default;
+					}
+			
+			ul.leftcolcontrolslist li i {
+				padding: 5px;
+				display: block;
+				cursor: pointer;
+				}
+				ul.leftcolcontrolslist li span {
+					display: none;
+					}
+
+
+
+/* ******************************************************** */
+/* iv. Workspace Manager ********************************** */
+/* ******************************************************** */
+
+/* Workspaces Wrapper */
+div.workspaceslistwrapper {
+	padding: 3px 5px;
+	}
+
+/* Workspace List */
+ul.workspacesmadelist {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	}
+	ul.workspacesmadelist li {
+		color: #cecece;
+		font-size: 12px;
+		}
+		ul.workspacesmadelist li.workspaceitem {
+			padding: 3px 0;
+			display: block;
+			}
+			ul.workspacesmadelist li.workspaceitem div.workspacerowitem {
+				position: relative;
+				}
+				ul.workspacesmadelist div.workspacerowitem div.input {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 20px;
+					}
+					ul.workspacesmadelist div.workspacerowitem div.input input {}
+				ul.workspacesmadelist div.workspacerowitem div.name {
+					padding: 2px 0 0 25px;
+					
+					-webkit-box-sizing: border-box;
+					-moz-box-sizing: 	border-box;
+					box-sizing: 		border-box;
+					}
+					ul.workspacesmadelist div.workspacerowitem div.name label {
+						padding: 2px 0 0;
+						display: block;
+						}
+
+/* Message/Notice */
+div.workspaceannouncement {
+	padding: 10px 0;
+	color: #cecece;
+	font-size: 12px;
+	line-height: 18px;
+	}
+	div.workspaceannouncement a {
+		color: #f5b53c;
+		text-decoration: underline;
+		}
+
+
+
+/* ******************************************************** */
+/* v. FTP Connection Manager ****************************** */
+/* ******************************************************** */
+
+/* FTP Connections Wrapper */
+div.ftpconnectionswrapper {
+	padding: 3px 5px;
+	}
+
+/* FTP Connections List */
+ul.ftpconnectionslist {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	}
+	ul.ftpconnectionslist li {
+		color: #cecece;
+		font-size: 12px;
+		}
+		ul.ftpconnectionslist li.ftpitem {
+			padding: 3px 0;
+			display: block;
+			}
+			ul.ftpconnectionslist li.ftpitem div.ftprowitem {
+				position: relative;
+				}
+				
+				/* Checkbox */
+				ul.ftpconnectionslist div.ftprowitem div.input {
+					position: absolute;
+					top: 1px;
+					left: 0;
+					z-index: 5;
+					width: 20px;
+					}
+					ul.ftpconnectionslist div.ftprowitem div.input input {}
+				
+				/* Connection Title */
+				ul.ftpconnectionslist div.ftprowitem div.name {
+					position: relative;
+					padding: 2px 0 0 25px;
+					float: none;
+					width: 100%;
+					
+					-webkit-box-sizing: border-box;
+					-moz-box-sizing: 	border-box;
+					box-sizing: 		border-box;
+					}
+					
+					/* Down Arrow for Accordion */
+					ul.ftpconnectionslist div.ftprowitem div.name:before {
+						position: absolute;
+						top: 4px;
+						right: 10px;
+						font-family: FontAwesome;
+						content: "\f0d7";
+						cursor: pointer;
+						}
+						
+						/* Up Arrow for Accordion (Active) */
+						ul.ftpconnectionslist li.ftpitem.active div.ftprowitem div.name:before {
+							position: absolute;
+							top: 4px;
+							right: 10px;
+							font-family: FontAwesome;
+							content: "\f0d8";
+							}
+					
+					/* Connection Title Label */
+					ul.ftpconnectionslist div.ftprowitem div.name label {
+						padding: 2px 0 0;
+						display: block;
+						cursor: pointer;
+						
+						-webkit-user-select: 	none;
+						-moz-user-select: 		none;
+						user-select: 			none;
+						}
+					
+				/* Connection Details Accordion */
+				div.ftphostconndetails {
+					padding: 8px 0 8px 25px;
+					display: none;
+					width: 100%;
+					
+					-webkit-box-sizing: border-box;
+					-moz-box-sizing: 	border-box;
+					box-sizing: 		border-box;					
+					}
+					
+					/* Active */
+					li.ftpitem.active div.ftphostconndetails {
+						display: block;
+						}
+					
+					/* Connection Details */
+					div.ftphostconndetails div.ftpconlabel {
+						line-height: 15px;
+						}
+						div.ftphostconndetails div.ftplabelhost {}
+						div.ftphostconndetails div.ftplabeluser {}
+						div.ftphostconndetails div.ftplabelpost {}
+						div.ftphostconndetails div.ftplabelprotocol {}
+
+
+
+/* ******************************************************** */
+/* vi. Message/Notice ************************************* */
+/* ******************************************************** */
+
+/* FTP */
+div.ftpannouncement {
+	padding: 10px 0;
+	color: #cecece;
+	font-size: 12px;
+	line-height: 18px;
+	}
+	div.ftpannouncement a {
+		color: #f5b53c;
+		text-decoration: underline;
+		}
+
+
+/* workspace */
+div.workspace-announcement {
+	padding: 10px 0;
+	color: #cecece;
+	font-size: 12px;
+	line-height: 18px;
+        display: none;
+	}
+	div.workspace-announcement a {
+		color: #f5b53c;
+		text-decoration: underline;
+		}
+
+
+
+/* ******************************************************** */
+/* vii. workspace Manager Wrapper ************************** */
+/* ******************************************************** */
+div.workspace-list-wrapper {
+	padding: 3px 5px;
+	}
+
+/* workspace List */
+ul.workspace-list {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	}
+	ul.workspace-list li {
+		color: #cecece;
+		font-size: 12px;
+		}
+		ul.workspace-list li.workspace-item {
+			padding: 3px 0;
+			display: block;
+			}
+			ul.workspace-list li.workspace-item div.workspace-row-item {
+				position: relative;
+				}
+				ul.workspace-list div.workspace-row-item div.input {
+					position: absolute;
+					top: 1px;
+					left: 0;
+					width: 20px;
+					}
+					ul.workspace-list div.workspace-row-item div.input input {}
+				ul.workspace-list div.workspace-row-item div.name {
+					padding: 2px 0 0 25px;
+					
+					-webkit-box-sizing: border-box;
+					-moz-box-sizing: 	border-box;
+					box-sizing: 		border-box;
+					}
+					ul.workspace-list div.workspace-row-item div.name label {
+						padding: 2px 0 0;
+						display: block;
+						}
+
+/* Database */
+div.database-announcement {
+	padding: 10px 0;
+	color: #cecece;
+	font-size: 12px;
+	line-height: 18px;
+        display: none;
+	}
+	div.database-announcement a {
+		color: #f5b53c;
+		text-decoration: underline;
+		}
+
+
+
+/* ******************************************************** */
+/* vii. Database Manager Wrapper ************************** */
+/* ******************************************************** */
+div.database-list-wrapper {
+	padding: 3px 5px;
+	}
+
+/* Database List */
+ul.database-list {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	}
+	ul.database-list li {
+		color: #cecece;
+		font-size: 12px;
+		}
+		ul.database-list li.database-item {
+			padding: 3px 0;
+			display: block;
+			}
+			ul.database-list li.database-item div.database-row-item {
+				position: relative;
+				}
+				ul.database-list div.database-row-item div.input {
+					position: absolute;
+					top: 1px;
+					left: 0;
+					width: 20px;
+					}
+					ul.database-list div.database-row-item div.input input {}
+				ul.database-list div.database-row-item div.name {
+					padding: 2px 0 0 25px;
+					
+					-webkit-box-sizing: border-box;
+					-moz-box-sizing: 	border-box;
+					box-sizing: 		border-box;
+					}
+					ul.database-list div.database-row-item div.name label {
+						padding: 2px 0 0;
+						display: block;
+						}
+
+
+
+/* ******************************************************** */
+/* viii. Right Sidebar ************************************ */
+/* ******************************************************** */
+div.sidetools_holder {
+	position: absolute;
+	top: 0;
+	right: 0;
+	float: right;
+	width: 45px;
+	height: 100%;
+	background-color: #2c2c2c;
+	
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: 	border-box;
+	box-sizing: 		border-box;
+	}
+	div.sidetools_inside {}
+
+
+
+/* ******************************************************** */
+/* ix. Status Bar ***************************************** */
+/* ******************************************************** */
+#statusbar {
+	position: absolute;
+	bottom: 0;
+	z-index: 9999;
+	width: 100%;
+	height: auto;
+	border-top: 1px solid #000;
+	background-color: #353535;
+	}
+	#statusbar.active 	{}
+	#statusbar.inactive { display: none; height: 0; }
+
+	div.statusbarwrapper {
+		position: relative;
+		padding: 9px 8px;
+		color: #fff;
+		font-size: 11px;
+		text-align: left;
+		border-top: 1px solid #464646;
+		}
+		
+		/* Status Bar Path Levels */
+		div.statusbarwrapper span.statustaglevels {
+			position: absolute;
+			top: 9px;
+			left: 8px;
+			z-index: 5;
+			}
+			span.statustaglevels span.spathtag {
+				padding: 0 3px;
+				display: inline-block;
+				color: #a0a0a0;
+				cursor: pointer;
+				
+				-webkit-transition: color 0.05s ease-in-out;
+				-moz-transition: 	color 0.05s ease-in-out;
+				-ms-transition: 	color 0.05s ease-in-out;
+				-o-transition: 		color 0.05s ease-in-out;
+				transition: 		color 0.05s ease-in-out;
+				}
+				span.statustaglevels span.spathtag:hover {
+					color: #f5b53c;
+					}
+		
+		/* Line, Column and Format */
+		div.statusbarwrapper span.linecolformat {
+			display: block;
+			text-align: right;
+			}
+
+
+
+/* ******************************************************** */
+/* x. Sidebar Resize Handle ******************************* */
+/* ******************************************************** */
+
+
+
+
+/* ******************************************************** */
+/* xi. Tooltip for Icons ********************************** */
+/* ******************************************************** */
+ul.leftcolcontrolslist div.tooltip {
+	position: absolute;
+	top: 35px;
+	left: 50%;
+	z-index: 10;
+	margin-top: -5px;
+	padding: 3px 7px;
+	display: block;
+	float: left;
+	font-size: 11px;
+	text-align: center;
+	border: 1px solid #000;
+	background-color: #2c2c2c;
+	white-space: nowrap;
+	}
+
+
+
+/* ******************************************************** */
+/* xii. Toolbar with Icons ******************************** */
+/* ******************************************************** */
+
+/* Header */
+div.editortoolbarheader {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+	font-size: 13px;
+	background-color: #3f3f3f;
+	}
+	div.editortoolbarheader.inactive {
+		display: none;
+		}
+	div.editortoolbarheader_inside {
+		position: relative;
+		height: 25px;
+		border-bottom: 1px solid #000;
+		}
+		
+		/* Column Output */
+		div.editortoolbarheadercol {
+			float: left;
+			color: #d3d3d3;
+			line-height: 25px;
+			
+			text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
+			}
+			
+			/* Tool Icons List */
+			ul.toolbaritemslist {
+				margin: 0;
+				padding: 0;
+				width: 10000px;
+				height: 25px;
+				display: block;
+				float: left;
+				}
+				ul.toolbaritemslist li {
+					margin: 0;
+					padding: 0;
+					display: block;
+					float: left;
+					}
+					
+					/* First Item */
+					ul.toolbaritemslist li.first {
+						padding-left: 12px;
+						}
+					
+					/* Last Item */
+					ul.toolbaritemslist li.last {}
+					
+					/* Icons Group */
+					ul.toolbaritemslist li.tlgroup {}
+						ul.toolbaritemslist li.tlgroup span {
+							position: relative;
+							padding: 0 12px 0 0;
+							display: block;
+							float: left;
+							}
+							ul.toolbaritemslist li.tlgroup i {
+								font-size: 1.1em;
+								cursor: pointer;
+								
+								-webkit-transition: color 0.05s ease-in-out;
+								-moz-transition: 	color 0.05s ease-in-out;
+								-ms-transition: 	color 0.05s ease-in-out;
+								-o-transition: 		color 0.05s ease-in-out;
+								transition: 		color 0.05s ease-in-out;
+								}
+								
+								/* Hover (Active) */
+								ul.toolbaritemslist li.tlgroup span:hover {
+									color: #f5b53c;
+									}
+								
+								/* Double Icons */
+								ul.toolbaritemslist li.tlgroup span.double {
+									margin-right: 5px;
+									}
+									ul.toolbaritemslist li.tlgroup span.double i.double {
+										position: absolute;
+										bottom: 5px;
+										right: 5px;
+										font-size: 10px;
+										}
+								
+								/* Disabled */
+								ul.toolbaritemslist li.tlgroup span.disabled i,
+								ul.toolbaritemslist li.tlgroup span.disabled i:hover {
+									color: #686868;
+									cursor: default;
+									}
+					
+					/* Group Separator */
+					ul.toolbaritemslist li.tlsep {
+						margin: 5px 12px 0 0;
+						padding: 0;
+						width: 2px;
+						background-color: #5c5c5c;
+						}
+						ul.toolbaritemslist li.tlsep span {
+							display: block;
+							float: left;
+							width: 1px;
+							height: 16px;
+							background-color: #000;
+							}
+			
+	
+	/* Section Separator */
+	div.editortoolbarheader div.editortoolbarheadersep {
+		border-bottom: 1px solid #000;
+		background-color: #303030;
+		}
+		div.editortoolbarheader div.editortoolbarheadersep span {
+			display: block;
+			height: 3px;
+			border-top: 1px solid #5d5d5d;
+			}
+
+
+
+/* *************************************************************************************************** */
+/* VII. Footer Region ******************************************************************************** */
+/* *************************************************************************************************** */
+div.footertoolbar_inside {
+	height: 100%;
+	}
+	div.footeroutputwrapper {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: 	border-box;
+		box-sizing: 		border-box;
+		}
+		div.footeroutputwrapper_inside {
+			position: relative;
+			z-index: 5;
+			padding-top: 30px;
+			padding-bottom: 26px;
+			height: 100%;
+			
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: 	border-box;
+			box-sizing: 		border-box;
+			}
+			
+			/* Panes */
+			div.footeroutputwrapper_inside div.footerpane {
+				position: relative;
+				display: none;
+				float: left;
+				height: 100%;
+				border-top: 1px solid #5c5c5c;
+				width: 100%;
+				}
+				
+				/* Single Pane */
+				/* div.footeroutputwrapper_inside.onepane div.footerpane 	{ width: 100%; } */
+				
+				/* Two Panes */
+				/* div.footeroutputwrapper_inside.twopanes div.footerpane { width: 50%; } */
+					
+					/* Terminal */
+					div.footeroutputwrapper_inside.twopanes div.footerpane.terminal {}
+						div.footeroutputwrapper_inside.twopanes div.footerpane.terminal div.footerpanetopbar {}
+							div.footeroutputwrapper_inside.twopanes div.footerpane.terminal div.footerpanetopbartxt_inner {
+								border-right: 1px solid #000;
+								}
+						
+						div.footeroutputwrapper_inside.twopanes div.footerpane.terminal div.ftrpaneframeoutput {
+							border-right: 1px solid #000;
+							}
+					
+					/* Search Results */
+					div.footeroutputwrapper_inside.twopanes div.footerpane.searchresults {}
+
+
+
+/* *************************************************************************************************** */
+/* VIII. Sidebar Tools ******************************************************************************* */
+/* *************************************************************************************************** */
+ul#sidebartoolslist {
+	margin: 15px 0 0;
+	padding: 0;
+	}
+	li.sidetool {
+		margin: 0 auto 10px;
+		display: block;
+		width: 18px;
+		height: 18px;
+		}
+		li.sidetool div {
+			display: block;
+			width: 18px;
+			height: 18px;
+			color: #cecece;
+			font-size: 18px;
+			text-align: center;
+			text-decoration: none;
+			cursor: pointer;
+			
+			-webkit-transition: color 0.05s ease-in-out;
+			-moz-transition: 	color 0.05s ease-in-out;
+			-ms-transition: 	color 0.05s ease-in-out;
+			-o-transition: 		color 0.05s ease-in-out;
+			transition: 		color 0.05s ease-in-out;
+			}
+			li.sidetool div:hover {
+				color: #f5b53c;
+				}
+		
+		/* Icons */
+		li.sidetool.config div 	{}
+		li.sidetool.term div 	{}
+		li.sidetool.preview div {}
+            li.sidetool div img {
+                width: 100%;
+                height: 100%;
+            	}
+
+
+
+/* *************************************************************************************************** */
+/* IX. Welcome Page ********************************************************************************** */
+/* *************************************************************************************************** */
+
+
+
+
+/* *************************************************************************************************** */
+/* X. Initialize Screen ****************************************************************************** */
+/* *************************************************************************************************** */
+div.initialize {
+	position: relative;
+	z-index: 99999999999;
+	width: 100%;
+	min-width: 100%;
+	max-width: 100%;
+	height: 100%;
+	min-height: 100%;
+	max-height: 100%;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	background-color: rgba(220, 220, 220, 1.00);
+	}
+	div.initialize_inside {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin: -50px 0 0 -325px;
+		padding: 15px 25px;
+		width: 100%;
+		max-width: 600px;
+		height: 70px;
+		}
+		div.initialize_title {
+			margin: 0;
+			padding: 0;
+			font-size: 13px;
+			font-weight: normal;
+			text-align: center;
+			}
+		div.initialize_subtext {
+			margin: 0;
+			padding: 0;
+			font-size: 11px;
+			font-weight: normal;
+			text-align: center;
+			}
+
+
+
+/* *************************************************************************************************** */
+/* XI. Autocomplete ********************************************************************************** */
+/* *************************************************************************************************** */
+.ace_autocomplete {
+    position: fixed !important;
+	}
+
+
+
+/* *************************************************************************************************** */
+/* XII. ACE Scrollbar ******************************************************************************** */
+/* *************************************************************************************************** */
+.ace_scrollbar-inner {
+    overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+    pointer-events: none;
+	}
+
+
+
+/* *************************************************************************************************** */
+/* XIII. Tab Frame *********************************************************************************** */
+/* *************************************************************************************************** */
+.tabframe {
+	width: 100%;
+	
+	height: 100%;
+
+	/*
+	height: -webkit-calc(100% - 60px);
+	height:    -moz-calc(100% - 60px);
+	height: 		calc(100% - 60px);
+	*/ /* Syntax for .css files */
+
+	height: ~"-webkit-calc(100% - 60px)";
+	height:    ~"-moz-calc(100% - 60px)";
+	height:         ~"calc(100% - 60px)";
+	
+	overflow-y: scroll;
+	}
+	.imagetabframe {
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		/* background-color: #dcdcdc; */
+		}
+		.databasetabframe {
+			height: 100%;
+			}
+	.ontab {
+		position: relative;
+		bottom: 0;
+		float: right;
+		width: auto;
+		}
+
+
+div[data-layout-type="left_manager"] {
+	display: none;
+	height: 100%;
+	background-color: #323232;
+	}
+	div[data-layout-type="left_manager"].active {
+		display: block;
+		}
+
+
+
+/* *************************************************************************************************** */
+/* XIV. Grid ***************************************************************************************** */
+/* *************************************************************************************************** */
+.grid,
+.grid li {
+	margin: 0;
+	padding: 2px;
+	float: left;
+	width: 100%;
+	height: auto;
+	}
+	.grid .input,
+	.grid .name {
+		float: left;
+		width: auto;
+		height: auto;
+		}
+
+
+
+/* *************************************************************************************************** */
+/* XV. Process Bar *********************************************************************************** */
+/* *************************************************************************************************** */
+.processbar {
+	background-color: #000;
+	opacity: 0.25;
+	position: absolute;
+	z-index: 100;  
+	}
+	.processbar img {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		-webkit-transform: 	translate(-50%,-50%);
+		-moz-transform: 	translate(-50%,-50%);
+		-ms-transform: 		translate(-50%,-50%);
+		-o-transform: 		translate(-50%,-50%);
+		transform: 			translate(-50%,-50%);
+		}
+
+
+
+/* *************************************************************************************************** */
+/* XVI. NotifyJS ************************************************************************************* */
+/* *************************************************************************************************** */
+.notifyjs-corner {
+	z-index: 1000000 !important;
+	}
+	.notifyjs-bootstrap-base {
+		position: relative;
+		padding: 15px;
+		padding-left: 35px !important;
+		font-size: 13px;
+		font-weight: normal;
+		white-space: nowrap;
+		border: 1px solid #fbeed5;
+		background-color: #fcf8e3;
+		background-position: 3px center;
+		background-repeat: no-repeat;
+		
+		text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+		-webkit-border-radius: 	1px;
+		-moz-border-radius: 	1px;
+		border-radius: 			1px;
+		}
+		.notifyjs-bootstrap-base:before {
+			position: absolute;
+			top: 10px;
+			left: 9px;
+			font-family: FontAwesome;
+			font-size: 20px;
+			}
+		
+		/* Error, Success, Info, Warn */
+		.notifyjs-bootstrap-base.notifyjs-bootstrap-error {
+			color: #b94a48;
+			border-color: #eed3d7;
+			background-color: #f2dede;
+			background-image: none;
+			}
+		.notifyjs-bootstrap-base.notifyjs-bootstrap-success {
+			color: #468847;
+			border-color: #d6e9c6;
+			background-color: #dff0d8;
+			background-image: none;
+			}
+		.notifyjs-bootstrap-base.notifyjs-bootstrap-info {
+			color: #3a87ad;
+			border-color: #bce8f1;
+			background-color: #d9edf7;
+			background-image: none;
+			}
+		.notifyjs-bootstrap-base.notifyjs-bootstrap-warn {
+			color: #c09853;
+			border-color: #fbeed5;
+			background-color: #fcf8e3;
+			background-image: none;
+			}
+			.notifyjs-bootstrap-base.notifyjs-bootstrap-error:before 	{ color: #b94a48; content: "\f057"; }
+			.notifyjs-bootstrap-base.notifyjs-bootstrap-success:before 	{ color: #468847; content: "\f058"; }
+			.notifyjs-bootstrap-base.notifyjs-bootstrap-info:before 	{ color: #3a87ad; content: "\f05a"; }
+			.notifyjs-bootstrap-base.notifyjs-bootstrap-warn:before 	{ color: #c09853; content: "\f071"; }
+
+
+
+/* *************************************************************************************************** */
+/* XVII. System Fullscreen Backdrop with Notice ****************************************************** */
+/* *************************************************************************************************** */
+div.statusloaderbackdrop {
+    position: fixed;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.60);
+	}
+	div.statusloadbackdrop_inside {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		}
+		div.statusloaderbackdrop_notice {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin: -55px 0 0 -165px;
+			padding: 0;
+			width: 100%;
+			max-width: 330px;
+			font-size: 14px;
+			line-height: 18px;
+			text-align: center;
+			border: 1px solid #454545;
+			background-color: #303030;
+			}
+			div.statusloaderbackdrop_noticetxt {
+				padding: 15px;
+				color: #fff;
+				border: 1px solid #202020;
+				}
+				div.statusloaderbackdrop_notice div.noticetxt {}
+				div.statusloaderbackdrop_notice div.noticeicon {
+					padding: 15px 0 0;
+					font-size: 30px;
+					text-align: center;
+					}
+
+
+
+/* *************************************************************************************************** */
+/* XVIII. Footer Pane: Footer Feature Tabs *********************************************************** */
+/* *************************************************************************************************** */
+div.footerfeaturetabs {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 10;
+	width: 100%;
+	border-top: 1px solid #000;
+	background-color: #303030;
+	}
+	div.footerfeaturetabs_inside {
+		position: relative;
+		height: 26px;
+		color: #d3d3d3;
+		font-size: 0.80em;
+		line-height: 25px;
+		background-color: #3f3f3f;
+		
+		text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
+		}
+		ul.ftrfeaturestablist {
+			margin: 0;
+			padding: 0;
+			list-style-type: none;
+			cursor: pointer;
+			}
+			ul.ftrfeaturestablist li {
+				position: relative;
+				margin: 0;
+				padding: 0 10px;
+				display: block;
+				float: left;
+				border-right: 1px solid #000;
+				
+				-webkit-transition: color 0.05s ease-in-out,
+									background-color 0.05s ease-in-out;
+				-moz-transition: 	color 0.05s ease-in-out,
+									background-color 0.05s ease-in-out;
+				-ms-transition: 	color 0.05s ease-in-out,
+									background-color 0.05s ease-in-out;
+				-o-transition: 		color 0.05s ease-in-out,
+									background-color 0.05s ease-in-out;
+				transition: 		color 0.05s ease-in-out,
+									background-color 0.05s ease-in-out;
+				}
+				ul.ftrfeaturestablist li.odd {}
+				ul.ftrfeaturestablist li.even {}
+				
+				ul.ftrfeaturestablist li.first {}
+				ul.ftrfeaturestablist li.last {}
+				
+				ul.ftrfeaturestablist li i,
+				ul.ftrfeaturestablist li span {
+					display: block;
+					float: left;
+					}
+					ul.ftrfeaturestablist li i {
+						padding-right: 7px;
+						line-height: 25px;
+						}
+					ul.ftrfeaturestablist li span.txtlbl {}
+				
+				ul.ftrfeaturestablist li:hover,
+				ul.ftrfeaturestablist li.active {
+					color: #f5b53c;
+					background-color: #0f0f0f;
+					}
+					ul.ftrfeaturestablist li.active {
+						-webkit-box-shadow: 0 5px 15px rgba(222, 222, 222, 0.05) inset;
+						-moz-box-shadow: 	0 5px 15px rgba(222, 222, 222, 0.05) inset;
+						box-shadow: 		0 5px 15px rgba(222, 222, 222, 0.05) inset;
+						}
+
+/* Top Bar */
+div.footerpanetopbar {
+	position: absolute;
+	top: -31px;
+	left: 0;
+	z-index: 10;
+	width: 100%;
+	border-bottom: 1px solid #000;
+	background-color: #303030;
+	}
+	div.footerpanetopbar_inside {
+		position: relative;
+		height: 26px;
+		color: #d3d3d3;
+		font-size: 0.80em;
+		line-height: 25px;
+		border-top: 3px solid #303030;
+		background-color: #3f3f3f;
+		
+		text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
+		}
+		
+		/* Search Title */
+		div.footerpanetopbartxt {
+			padding: 0 10px;
+			/* border-top: 1px solid #5d5d5d; */
+			}
+			div.footerpanetopbartxt_inner {
+				border-top: 1px solid #000;
+				}
+		
+		/* Close Button */
+		div.footerpanesectionclose {
+			position: absolute;
+			top: 50%;
+			right: 10px;
+			margin: -4px 0 0 -6px;
+			width: 12px;
+			height: 12px;
+			font-size: 1.20em;
+			line-height: 50%;
+			cursor: pointer;
+			}
+			div.footerpanesectionclose span::after {
+				font-family: 'FontAwesome';
+				content: '\f00d';
+				}
+		
+		/* Configuration Dropdown */
+		div.paneitemconfiguration {
+			float: right;
+			}
+
+/* *************************************************************************************************** */
+/* XIX. Footer Pane: Search Results Pane ************************************************************* */
+/* *************************************************************************************************** */
+
+/* Search Results Wrapper */
+div.sresultsgroupswrapper {
+	position: relative;
+	z-index: 5;
+	height: 100%;
+	overflow-y: auto;
+	}
+	
+	/* Search Results Group */
+	div.sresultsgroup {
+		border-bottom: 1px solid #000;
+		}
+		div.sresultsgroup.active {
+			padding-bottom: 5px;
+			}
+		
+		/* Group Title */
+		div.sresultstitle {
+			margin: 0 0 0 10px;
+			padding: 5px 10px 5px 20px;
+			color: #d3d3d3;
+			font-size: 0.80em;
+			cursor: pointer;
+			background: url("../images/tree_nav_symbols.png") 0 6px no-repeat;
+			
+			-webkit-transition: color 0.05s ease-in-out;
+			-moz-transition: 	color 0.05s ease-in-out;
+			-ms-transition: 	color 0.05s ease-in-out;
+			-o-transition: 		color 0.05s ease-in-out;
+			transition: 		color 0.05s ease-in-out;
+			}
+			div.sresultstitle:hover {
+				color: #f5b53c;
+				}
+			
+			div.sresultsgroup.active div.sresultstitle {
+				background: url("../images/tree_nav_symbols.png") 0 -33px no-repeat;
+				}
+		
+		/* Items List */
+		ul.sresultsitemlist {
+			margin: 0 0 0 30px;
+			padding: 0;
+			display: none;
+			list-style-type: none;
+			}
+			div.sresultsgroup.active ul.sresultsitemlist { display: block; }
+			
+			ul.sresultsitemlist li {
+				position: relative;
+				margin: 0;
+				padding: 0;
+				display: block;
+				color: #d3d3d3;
+				font-size: 0.80em;
+				line-height: 18px;
+				}
+				
+				ul.sresultsitemlist li.odd {}
+				ul.sresultsitemlist li.even {}
+				
+				ul.sresultsitemlist li.first {}
+				ul.sresultsitemlist li.last {}
+				
+				ul.sresultsitemlist li.sresultitem {}
+				
+				/* Expand/Collapse Ticker */
+				div.rsresultsticker {
+					position: absolute;
+					top: 4px;
+					left: 0;
+					z-index: 5;
+					width: 11px;
+					height: 11px;
+					cursor: pointer;
+					background: url("../images/tree_nav_symbols.png") 0 0 no-repeat;
+					}
+					ul.sresultsitemlist li.active div.rsresultsticker {
+						background: url("../images/tree_nav_symbols.png") 0 -39px no-repeat;
+						}
+				
+				/* Results Output */
+				div.rsresultsoutput {
+					padding: 0 0 0 20px;
+					
+					-webkit-box-sizing: border-box;
+					-moz-box-sizing: 	border-box;
+					box-sizing: 		border-box;
+					}
+				
+					/* Search Result Item Path */
+					div.sresultitempath {}
+					
+					/* Search Result Item Data */
+					div.sresultitemdata {
+						display: none;
+						cursor: default;
+						white-space: pre;
+						}
+						div.sresultitemdata.active {
+							background-color: #1a1a1a;
+							}
+						
+						ul.sresultsitemlist li.active div.sresultitemdata { display: block; }
+						
+						div.sresultitemdata span.srlnnum {
+							color: #888;
+							}
+						div.sresultitemdata span.srmatch {
+							color: #000;
+							background-color: #f5b53c;
+							background-color: rgba(245, 181, 60, 0.95);
+							}
+
+/* Terminal Wrapper */
+.terminalwrapper {
+    position: relative;
+    height: 100%;
+	}
+.terminalwrapper iframe {
+    width: 100%;
+    height: 100%;
+	}
+
+/* *************************************************************************************************** */
+/* XX. File Tree ************************************************************************************* */
+/* *************************************************************************************************** */
+div.filenavmain {
+	width: 100%;
+	
+	-webkit-user-select: 	none;
+	-moz-user-select: 		none;
+	-ms-user-select: 		none;
+	user-select: 			none;
+	}
+	div.filenavmain *,
+	div.filenavmain *:before,
+	div.filenavmain *:after {
+		margin: 0;
+		padding: 0;
+		
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: 	border-box;
+		box-sizing: 		border-box;
+		}
+	
+	ul.filenavlist {
+		/* padding: 0 0 5px; */
+		padding: 0;
+		color: #f1f1f1;
+		font-family: Arial, Helvetica, Sans-serif;
+		font-size: 13px;
+		list-style-type: none;
+		}
+        ul.filenavlist:empty {
+            padding: 0px;
+        }
+		ul.filenavlist li {
+			white-space: pre;
+			}
+			li.subdir { position: relative; }
+				
+				/* Collapse All Lists */
+				li.subdir > ul {
+					display: none;
+					}
+					li.subdir.active > ul {
+						display: block;
+						}
+			
+			/* Subdirectory Arrow */
+			ul.filenavlist div.subdirarrow {
+				position: absolute;
+				top: 5px;
+				left: 2;
+				z-index: 5;
+				width: 10px;
+				height: 10px;
+				cursor: pointer;
+				/* background: transparent url("../images/filetree/arrow_collapsed.png") 50% 50% no-repeat; */
+				}
+				ul.filenavlist div.subdirarrow::after {
+					color: #adadad;
+					font-family: 'FontAwesome';
+					content: '\f0da';
+					}
+                                
+				/* Subdirectory Arrow: Active */
+				/* Subdirectory Arrow: Active */
+				ul.filelvl1  > li.subdir.active > div.subdirarrow,
+				ul.filelvl2  > li.subdir.active > div.subdirarrow,
+				ul.filelvl3  > li.subdir.active > div.subdirarrow,
+				ul.filelvl4  > li.subdir.active > div.subdirarrow,
+				ul.filelvl5  > li.subdir.active > div.subdirarrow,
+				ul.filelvl6  > li.subdir.active > div.subdirarrow,
+				ul.filelvl7  > li.subdir.active > div.subdirarrow,
+				ul.filelvl8  > li.subdir.active > div.subdirarrow,
+				ul.filelvl9  > li.subdir.active > div.subdirarrow,
+				ul.filelvl10 > li.subdir.active > div.subdirarrow,
+				ul.filelvl11 > li.subdir.active > div.subdirarrow,
+				ul.filelvl12 > li.subdir.active > div.subdirarrow,
+				ul.filelvl13 > li.subdir.active > div.subdirarrow,
+				ul.filelvl14 > li.subdir.active > div.subdirarrow,
+				ul.filelvl15 > li.subdir.active > div.subdirarrow,
+				ul.filelvl16 > li.subdir.active > div.subdirarrow,
+				ul.filelvl17 > li.subdir.active > div.subdirarrow,
+				ul.filelvl18 > li.subdir.active > div.subdirarrow,
+				ul.filelvl19 > li.subdir.active > div.subdirarrow,
+				ul.filelvl20 > li.subdir > div.subdirarrow.active {
+					/* background-image: url("../images/filetree/arrow_expanded.png"); */
+					}
+					ul.filelvl1  > li.subdir.active > div.subdirarrow::after,
+					ul.filelvl2  > li.subdir.active > div.subdirarrow::after,
+					ul.filelvl3  > li.subdir.active > div.subdirarrow::after,
+					ul.filelvl4  > li.subdir.active > div.subdirarrow::after,
+					ul.filelvl5  > li.subdir.active > div.subdirarrow::after,
+					ul.filelvl6  > li.subdir.active > div.subdirarrow::after,
+					ul.filelvl7  > li.subdir.active > div.subdirarrow::after,
+					ul.filelvl8  > li.subdir.active > div.subdirarrow::after,
+					ul.filelvl9  > li.subdir.active > div.subdirarrow::after,
+					ul.filelvl10 > li.subdir.active > div.subdirarrow::after,
+					ul.filelvl11 > li.subdir.active > div.subdirarrow::after,
+					ul.filelvl12 > li.subdir.active > div.subdirarrow::after,
+					ul.filelvl13 > li.subdir.active > div.subdirarrow::after,
+					ul.filelvl14 > li.subdir.active > div.subdirarrow::after,
+					ul.filelvl15 > li.subdir.active > div.subdirarrow::after,
+					ul.filelvl16 > li.subdir.active > div.subdirarrow::after,
+					ul.filelvl17 > li.subdir.active > div.subdirarrow::after,
+					ul.filelvl18 > li.subdir.active > div.subdirarrow::after,
+					ul.filelvl19 > li.subdir.active > div.subdirarrow::after,
+					ul.filelvl20 > li.subdir > div.subdirarrow.active::after {
+						color: #adadad;
+						font-family: 'FontAwesome';
+						content: '\f0d7';
+						}
+                    ul.filenavlist > li.subdir.loading > div.subdirarrow,
+                    ul.filenavlist > li.subdir.active.loading > div.subdirarrow {
+                        /* background-image: none; */
+                    	}
+	                    ul.filenavlist > li.subdir.loading > div.subdirarrow::after,
+	                    ul.filenavlist > li.subdir.active.loading > div.subdirarrow::after {
+	                        content: '';
+	                    	}
+			
+			/* Icons */
+			ul.filenavlist div.icon {
+				padding-top: 3px;
+				padding-right: 3px;
+				padding-bottom: 3px;
+				cursor: pointer;
+				
+				-webkit-transition: color 0.05s ease-in-out,
+									background-color 0.05s ease-in-out;
+				-moz-transition: 	color 0.05s ease-in-out,
+									background-color 0.05s ease-in-out;
+				-ms-transition: 	color 0.05s ease-in-out,
+									background-color 0.05s ease-in-out;
+				-o-transition: 		color 0.05s ease-in-out,
+									background-color 0.05s ease-in-out;
+				transition: 		color 0.05s ease-in-out,
+									background-color 0.05s ease-in-out;
+				}
+				ul.filenavlist div.icon:hover {
+					color: #f5b53c;
+					background-color: #1a1a1a;
+					background-color: rgba(26, 26, 26, 0.20);
+					}
+				ul.filenavlist > li.selected > div.icon {
+					color: #f5b53c;
+					background-color: #000;
+					background-color: rgba(0, 0, 0, 0.20);
+					}
+				
+				/* Arrow Positions */
+				ul.filenavlist.filelvl1 div.subdirarrow 		{ left:	 10px; }
+				ul.filenavlist ul.filelvl2 div.subdirarrow 		{ left:	 25px; }
+				ul.filenavlist ul.filelvl3 div.subdirarrow 		{ left:	 40px; }
+				ul.filenavlist ul.filelvl4 div.subdirarrow 		{ left:	 55px; }
+				ul.filenavlist ul.filelvl5 div.subdirarrow 		{ left:	 70px; }
+				ul.filenavlist ul.filelvl6 div.subdirarrow 		{ left:	 85px; }
+				ul.filenavlist ul.filelvl7 div.subdirarrow 		{ left:	100px; }
+				ul.filenavlist ul.filelvl8 div.subdirarrow 		{ left:	115px; }
+				ul.filenavlist ul.filelvl9 div.subdirarrow  	{ left:	130px; }
+				ul.filenavlist ul.filelvl10 div.subdirarrow 	{ left:	145px; }
+				ul.filenavlist ul.filelvl11 div.subdirarrow 	{ left:	160px; }
+				ul.filenavlist ul.filelvl12 div.subdirarrow 	{ left:	175px; }
+				ul.filenavlist ul.filelvl13 div.subdirarrow 	{ left:	190px; }
+				ul.filenavlist ul.filelvl14 div.subdirarrow 	{ left:	205px; }
+				ul.filenavlist ul.filelvl15 div.subdirarrow	{ left:	220px; }
+				ul.filenavlist ul.filelvl16 div.subdirarrow 	{ left:	235px; }
+				ul.filenavlist ul.filelvl17 div.subdirarrow 	{ left:	250px; }
+				ul.filenavlist ul.filelvl18 div.subdirarrow 	{ left:	265px; }
+				ul.filenavlist ul.filelvl19 div.subdirarrow 	{ left:	280px; }
+				ul.filenavlist ul.filelvl20 div.subdirarrow 	{ left:	295px; }
+				ul.filenavlist ul.filelvl21 div.subdirarrow 	{ left:	310px; }
+				ul.filenavlist ul.filelvl22 div.subdirarrow 	{ left:	325px; }
+				ul.filenavlist ul.filelvl23 div.subdirarrow 	{ left:	340px; }
+				ul.filenavlist ul.filelvl24 div.subdirarrow 	{ left:	355px; }
+				ul.filenavlist ul.filelvl25 div.subdirarrow 	{ left:	370px; }
+				ul.filenavlist ul.filelvl26 div.subdirarrow 	{ left:	385px; }
+				ul.filenavlist ul.filelvl27 div.subdirarrow 	{ left:	400px; }
+				ul.filenavlist ul.filelvl28 div.subdirarrow 	{ left:	415px; }
+				ul.filenavlist ul.filelvl29 div.subdirarrow 	{ left:	430px; }
+				ul.filenavlist ul.filelvl30 div.subdirarrow 	{ left:	445px; }
+				
+				/* Icon Positions */
+				ul.filenavlist.filelvl1 div.icon 		{ padding-left:	 25px; }
+				ul.filenavlist ul.filelvl2 div.icon 	{ padding-left:	 40px; }
+				ul.filenavlist ul.filelvl3 div.icon 	{ padding-left:	 55px; }
+				ul.filenavlist ul.filelvl4 div.icon 	{ padding-left:	 70px; }
+				ul.filenavlist ul.filelvl5 div.icon 	{ padding-left:	 85px; }
+				ul.filenavlist ul.filelvl6 div.icon 	{ padding-left:	100px; }
+				ul.filenavlist ul.filelvl7 div.icon 	{ padding-left:	115px; }
+				ul.filenavlist ul.filelvl8 div.icon 	{ padding-left:	130px; }
+				ul.filenavlist ul.filelvl9 div.icon  	{ padding-left:	145px; }
+				ul.filenavlist ul.filelvl10 div.icon 	{ padding-left:	160px; }
+				ul.filenavlist ul.filelvl11 div.icon 	{ padding-left:	175px; }
+				ul.filenavlist ul.filelvl12 div.icon 	{ padding-left:	190px; }
+				ul.filenavlist ul.filelvl13 div.icon 	{ padding-left:	205px; }
+				ul.filenavlist ul.filelvl14 div.icon 	{ padding-left:	220px; }
+				ul.filenavlist ul.filelvl15 div.icon	{ padding-left:	235px; }
+				ul.filenavlist ul.filelvl16 div.icon 	{ padding-left:	250px; }
+				ul.filenavlist ul.filelvl17 div.icon 	{ padding-left:	265px; }
+				ul.filenavlist ul.filelvl18 div.icon 	{ padding-left:	280px; }
+				ul.filenavlist ul.filelvl19 div.icon 	{ padding-left:	295px; }
+				ul.filenavlist ul.filelvl20 div.icon 	{ padding-left:	310px; }
+				ul.filenavlist ul.filelvl21 div.icon 	{ padding-left:	325px; }
+				ul.filenavlist ul.filelvl22 div.icon 	{ padding-left:	340px; }
+				ul.filenavlist ul.filelvl23 div.icon 	{ padding-left:	355px; }
+				ul.filenavlist ul.filelvl24 div.icon 	{ padding-left:	370px; }
+				ul.filenavlist ul.filelvl25 div.icon 	{ padding-left:	385px; }
+				ul.filenavlist ul.filelvl26 div.icon 	{ padding-left:	400px; }
+				ul.filenavlist ul.filelvl27 div.icon 	{ padding-left:	415px; }
+				ul.filenavlist ul.filelvl28 div.icon 	{ padding-left:	430px; }
+				ul.filenavlist ul.filelvl29 div.icon 	{ padding-left:	445px; }
+				ul.filenavlist ul.filelvl30 div.icon 	{ padding-left:	460px; }
+		
+		ul.filenavlist ul {
+			list-style-type: none;
+			}
+
+/* Icons */
+div.icon > span {
+	padding-top: 1px;
+	padding-bottom: 1px;
+	padding-left: 20px;
+	display: block;
+	background-position: 0 -1px;
+	background-repeat: no-repeat;
+	}
+	
+	/* ***************************************** */
+	/* Directory Icons ************************* */
+	/* ***************************************** */
+	
+	/* Directory: Closed */
+	div.icon.dir > span { background-image: url("../images/filetree/directory.png"); }
+	
+	/* Directory: Open */
+	li.subdir.active > div.icon.dir > span { background-image: url("../images/filetree/folder_open.png"); }
+	
+	
+	
+	/* ***************************************** */
+	/* File Type Icons ************************* */
+	/* ***************************************** */
+	
+	/* Default Icon */
+	div.icon > span { background-image: url("../images/filetree/txt.png"); }
+	
+	/* ***************************************** */
+	
+	/* ASCX (.NET) */
+	div.icon.ascx > span { background-image: url("../images/filetree/ascx.png"); }
+	
+	/* ASP/ASPX (.NET) */
+	div.icon.asp > span { background-image: url("../images/filetree/aspx.png"); }
+	div.icon.aspx > span { background-image: url("../images/filetree/aspx.png"); }
+
+	/* Code */
+	div.icon.code > span { background-image: url("../images/filetree/code.png"); }
+	
+	/* CRT */
+	div.icon.crt > span { background-image: url("../images/filetree/txt.png"); }
+	
+	/* CS (.NET) */
+	div.icon.cs > span { background-image: url("../images/filetree/cs.png"); }
+	
+	/* CSS */
+	div.icon.css > span { background-image: url("../images/filetree/css.png"); }
+	
+	/* Database */
+	div.icon.db > span { background-image: url("../images/filetree/db.png"); }
+	div.icon.sql > span { background-image: url("../images/filetree/db.png"); }
+	
+	/* Doc */
+	div.icon.doc > span { background-image: url("../images/filetree/doc.png"); }
+	div.icon.docx > span { background-image: url("../images/filetree/doc.png"); }
+	
+	/* Film */
+	div.icon.avi > span { background-image: url("../images/filetree/film.png"); }
+	div.icon.film > span { background-image: url("../images/filetree/film.png"); }
+	div.icon.mpeg > span { background-image: url("../images/filetree/film.png"); }
+	div.icon.mpg > span { background-image: url("../images/filetree/film.png"); }
+	div.icon.wmv > span { background-image: url("../images/filetree/film.png"); }
+	
+	/* Flash */
+	div.icon.film > span { background-image: url("../images/filetree/flash.png"); }
+	
+	/* Fonts (eot/otf/svg/ttf/woff) */
+	div.icon.eot > span { background-image: url("../images/filetree/font.png"); }
+	div.icon.otf > span { background-image: url("../images/filetree/font.png"); }
+	div.icon.svg > span { background-image: url("../images/filetree/font.png"); }
+	div.icon.ttf > span { background-image: url("../images/filetree/font.png"); }
+	div.icon.woff > span { background-image: url("../images/filetree/font.png"); }
+	
+	/* General File */
+	div.icon.gfile > span { background-image: url("../images/filetree/gfile.png"); }
+	
+	/* HTML */
+	div.icon.htm > span { background-image: url("../images/filetree/html.png"); }
+	div.icon.html > span { background-image: url("../images/filetree/html.png"); }
+	
+	/* JAVA */
+	div.icon.java > span { background-image: url("../images/filetree/java.png"); }
+	
+	/* Linux */
+	div.icon.linux > span { background-image: url("../images/filetree/linux.png"); }
+	
+	/* Music */
+	div.icon.aif > span { background-image: url("../images/filetree/music.png"); }
+	div.icon.aiff > span { background-image: url("../images/filetree/music.png"); }
+	div.icon.mp3 > span { background-image: url("../images/filetree/music.png"); }
+	div.icon.music > span { background-image: url("../images/filetree/music.png"); }
+	
+	/* PDF */
+	div.icon.pdf > span { background-image: url("../images/filetree/pdf.png"); }
+	
+	/* PHP */
+	div.icon.php > span { background-image: url("../images/filetree/php.png"); }
+	div.icon.phtml > span { background-image: url("../images/filetree/php.png"); }
+	
+	/* Picture */
+	div.icon.picture > span { background-image: url("../images/filetree/picture.png"); }
+	div.icon.gif > span { background-image: url("../images/filetree/picture.png"); }
+	div.icon.ico > span { background-image: url("../images/filetree/picture.png"); }
+	div.icon.jpeg > span { background-image: url("../images/filetree/picture.png"); }
+	div.icon.jpg > span { background-image: url("../images/filetree/picture.png"); }
+	div.icon.png > span { background-image: url("../images/filetree/picture.png"); }
+	div.icon.targa > span { background-image: url("../images/filetree/picture.png"); }
+	div.icon.tiff > span { background-image: url("../images/filetree/picture.png"); }
+	
+	/* PPT */
+	div.icon.ppt > span { background-image: url("../images/filetree/ppt.png"); }
+	div.icon.pptx > span { background-image: url("../images/filetree/ppt.png"); }
+	
+	/* PSD */
+	div.icon.psd > span { background-image: url("../images/filetree/psd.png"); }
+	
+	/* Ruby */
+	div.icon.ruby > span { background-image: url("../images/filetree/ruby.png"); }
+	
+	/* Script */
+	div.icon.script > span { background-image: url("../images/filetree/script.png"); }
+	div.icon.js > span { background-image: url("../images/filetree/script.png"); }
+	div.icon.json > span { background-image: url("../images/filetree/script.png"); }
+	div.icon.jsp > span { background-image: url("../images/filetree/script.png"); }
+	
+	/* SWF */
+	div.icon.swf > span { background-image: url("../images/filetree/flash.png"); }
+	
+	/* Text */
+	div.icon.bak > span { background-image: url("../images/filetree/txt.png"); }
+	div.icon.txt > span { background-image: url("../images/filetree/txt.png"); }
+	
+	/* XML */
+	div.icon.xml > span { background-image: url("../images/filetree/txt.png"); }
+	
+	/* XSL */
+	div.icon.xls > span { background-image: url("../images/filetree/xls.png"); }
+	div.icon.xlsx > span { background-image: url("../images/filetree/xls.png"); }
+	
+	/* ZIP */
+	div.icon.gz > span { background-image: url("../images/filetree/zip.png"); }
+	div.icon.zip > span { background-image: url("../images/filetree/zip.png"); }
+
+
+
+/* *************************************************************************************************** */
+/* XXI. jQuery UI Dialogs **************************************************************************** */
+/* *************************************************************************************************** */
+
+/* Dialog Overlay */
+.ui-widget-overlay {
+	/*
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999998;
+	display: none;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	*/
+	background: rgba(0, 0, 0, 0.50);
+	}
+
+/* Dialog */
+.ui-dialog {
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	outline: 0 none;
+        opacity: 0.3;
+	}
+	
+	/* Position */
+	.ui-dialog.ui-front {
+		z-index: 100;
+		}
+	
+	
+	
+	/* *********************************** */
+	/* Content *************************** */
+	/* *********************************** */
+	.ui-dialog.ui-widget-content {
+		color: #fff;
+		border: 1px solid #454545;
+		background-color: #303030;
+		
+		-webkit-box-shadow: 1px 1px 0 rgba(32, 32, 32, 1.00) inset,
+							-1px -1px 0 rgba(32, 32, 32, 1.00) inset;
+		-moz-box-shadow: 	1px 1px 0 rgba(32, 32, 32, 1.00) inset,
+							-1px -1px 0 rgba(32, 32, 32, 1.00) inset;
+		box-shadow: 		1px 1px 0 rgba(32, 32, 32, 1.00) inset,
+							-1px -1px 0 rgba(32, 32, 32, 1.00) inset;
+		}
+	
+	/* Draggable */
+	.ui-dialog.ui-draggable {}
+
+	/* Resizable */
+	.ui-dialog.ui-resizable {
+		position: relative;
+		}
+	
+	
+	
+	/* *********************************** */
+	/* Widget **************************** */
+	/* *********************************** */
+	.ui-dialog.ui-widget {}
+	.ui-dialog.ui-widget .widget {
+		margin: 0 !important;
+		padding: 0 !important;
+		overflow: hidden !important;
+		}
+		.ui-dialog.ui-widget .widget > iframe {
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			height: 100%;
+			border: 0;
+			}
+	
+	
+	
+	/* *********************************** */
+	/* Frame Header Elements ************* */
+	/* *********************************** */
+	
+	/* Header */
+	.ui-dialog .ui-widget-header {
+		color: #fff;
+		font-weight: normal;
+		/*
+		border: 1px solid #333;
+		background-color: #333;
+		*/
+		}
+		
+		/* Close Button */
+		.ui-dialog .ui-widget-header .ui-dialog-titlebar-close {
+			position: absolute;
+			top: 50%;
+			right: 9px;
+			margin: -10px 0 0;
+			padding: 1px;
+			width: 20px;
+			height: 20px;
+			color: #f0f0f0;
+			line-height: 50em;
+			cursor: pointer;
+			overflow: hidden;
+			outline: 0 none;
+			border: 1px solid #666;
+			/* background: #303030 url("../images/scpopup/bttn_close.png") center center no-repeat; */
+			background-color: #303030;
+			
+			-webkit-transition: border-color 0.05s ease-in-out,
+								background-color 0.05s ease-in-out;
+			-moz-transition: 	border-color 0.05s ease-in-out,
+								background-color 0.05s ease-in-out;
+			-ms-transition: 	border-color 0.05s ease-in-out,
+								background-color 0.05s ease-in-out;
+			-o-transition: 		border-color 0.05s ease-in-out,
+								background-color 0.05s ease-in-out;
+			transition: 		border-color 0.05s ease-in-out,
+								background-color 0.05s ease-in-out;
+			-webkit-user-select: 	none;
+			-moz-user-select: 		none;
+			user-select: 			none;
+			}
+			.ui-dialog .ui-widget-header .ui-dialog-titlebar-close:after {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 18px;
+				font-family: 'FontAwesome';
+				line-height: 1.30em;
+				content: '\f00d';
+				text-align: center;
+				}
+			
+			.ui-dialog .ui-widget-header .ui-dialog-titlebar-close:hover {
+				border-color: #afafaf;
+				background-color: #0f0f0f;
+				}
+	
+	/* Title Bar */
+	.ui-dialog .ui-dialog-titlebar {
+		position: relative;
+		}
+		
+		/* Title */
+		.ui-dialog .ui-dialog-title {
+			margin: 0;
+			padding: 13px 20px 14px;
+			display: block;
+			color: #fff;
+			font-size: 14px;
+			text-transform: uppercase;
+			border-bottom: 1px solid #303030;
+			}
+			
+			/* If Draggable */
+			.ui-dialog.ui-draggable .ui-dialog-title {
+				cursor: move;
+				}
+	
+	/* Draggable Handle */
+	.ui-dialog .ui-draggable-handle {}
+	
+	
+	
+	/* *********************************** */
+	/* Frame Widget Content Elements ***** */
+	/* *********************************** */
+	.ui-dialog .widget {
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+		}
+	.ui-dialog .ui-dialog-content {
+		position: relative;
+		overflow: auto;
+		border: 0 none;
+		/* background-color: #303030; */
+		}
+	
+	
+	
+	/* *********************************** */
+	/* Dialog Button Pane **************** */
+	/* *********************************** */
+	div.ui-dialog-buttonpane {
+		padding: 0 20px 10px;
+		}
+		
+		/* If opened as a tab, not as a popup */
+		/*
+		div.ui-tabs-panel div.infopopupcontrols {
+			padding-top: 8px;
+			padding-right: 10px;
+			}
+		*/
+		
+		div.ui-dialog-buttonset {
+			float: right;
+			}
+			
+			/* Buttons */
+			div.ui-dialog-buttonpane .ui-button {
+				margin: 0 0 0 7px;
+				padding: 6px 15px;
+				float: left;
+				cursor: pointer;
+				color: #fff;
+				font-size: 12px;
+				border: 1px solid #000;
+				background-color: #303030;
+				
+				-webkit-box-shadow: 1px 1px 0 rgba(69, 69, 69, 0.40) inset,
+									-1px -1px 0 rgba(69, 69, 69, 0.40) inset,
+									0 5px 15px rgba(222, 222, 222, 0.05) inset;
+				-moz-box-shadow: 	1px 1px 0 rgba(69, 69, 69, 0.40) inset,
+									-1px -1px 0 rgba(69, 69, 69, 0.40) inset,
+									0 5px 15px rgba(222, 222, 222, 0.05) inset;
+				box-shadow: 		1px 1px 0 rgba(69, 69, 69, 0.40) inset,
+									-1px -1px 0 rgba(69, 69, 69, 0.40) inset,
+									0 5px 15px rgba(222, 222, 222, 0.05) inset;
+				-webkit-transition: color 0.05s ease-in-out,
+									border-color 0.05s ease-in-out,
+									background-color 0.05s ease-in-out,
+									-webkit-box-shadow 0.05s ease-in-out;
+				-moz-transition: 	color 0.05s ease-in-out,
+									border-color 0.05s ease-in-out,
+									background-color 0.05s ease-in-out,
+									-moz-box-shadow 0.05s ease-in-out;
+				-ms-transition: 	color 0.05s ease-in-out,
+									border-color 0.05s ease-in-out,
+									background-color 0.05s ease-in-out,
+									-ms-box-shadow 0.05s ease-in-out;
+				-o-transition: 		color 0.05s ease-in-out,
+									border-color 0.05s ease-in-out,
+									background-color 0.05s ease-in-out,
+									-o-box-shadow 0.05s ease-in-out;
+				transition: 		color 0.05s ease-in-out,
+									border-color 0.05s ease-in-out,
+									background-color 0.05s ease-in-out,
+									box-shadow 0.05s ease-in-out;
+				}
+				div.ui-dialog-buttonpane .ui-button::-moz-focus-inner {
+					padding: 0;
+					border: 0 none;
+					}
+				
+				div.ui-dialog-buttonpane .ui-button.save {}
+				div.ui-dialog-buttonpane .ui-button.cancel {}
+				
+				div.ui-dialog-buttonpane .ui-button:hover {
+					color: #f5b53c;
+					background-color: #0f0f0f;
+					
+					-webkit-box-shadow: 1px 1px 0 rgba(10, 10, 10, 0.80)inset,
+										-1px -1px 0 rgba(10, 10, 10, 0.80)inset,
+										0 5px 15px rgba(60, 60, 60, 0.10) inset;
+					-moz-box-shadow: 	1px 1px 0 rgba(10, 10, 10, 0.80)inset,
+										-1px -1px 0 rgba(10, 10, 10, 0.80)inset,
+										0 5px 15px rgba(60, 60, 60, 0.10) inset;
+					box-shadow: 		1px 1px 0 rgba(10, 10, 10, 0.80)inset,
+										-1px -1px 0 rgba(10, 10, 10, 0.80)inset,
+										0 5px 15px rgba(60, 60, 60, 0.10) inset;
+					}
+	
+	
+	
+	/* *********************************** */
+	/* Frame Resize Handle Elements ****** */
+	/* *********************************** */
+	.ui-dialog .ui-resizable-handle {
+		position: absolute;
+		display: block;
+		font-size: 0.1px;
+		}
+		
+		/* North */
+		.ui-dialog .ui-resizable-n {
+			top: -5px;
+			left: 0;
+			height: 7px;
+			width: 100%;
+			cursor: n-resize;
+			}
+		
+		/* East */
+		.ui-dialog .ui-resizable-e {
+			top: 0;
+			right: -5px;
+			width: 7px;
+			height: 100%;
+			cursor: e-resize;
+			}
+		
+		/* South */
+		.ui-dialog .ui-resizable-s {
+			bottom: -5px;
+			left: 0;
+			width: 100%;
+			height: 7px;
+			cursor: s-resize;
+			}
+		
+		/* West */
+		.ui-dialog .ui-resizable-w {
+			top: 0;
+			left: -5px;
+			width: 7px;
+			height: 100%;
+			cursor: w-resize;
+			}
+		
+		/* Southeast */
+		.ui-dialog .ui-resizable-se {
+			right: 1px;
+			bottom: 1px;
+			width: 12px;
+			height: 12px;
+			cursor: se-resize;
+			}
+		
+		/* Southwest */
+		.ui-dialog .ui-resizable-sw {
+			bottom: -5px;
+			left: -5px;
+			width: 9px;
+			height: 9px;
+			cursor: sw-resize;
+			}
+		
+		/* Northeast */
+		.ui-dialog .ui-resizable-ne {
+			top: -5px;
+			right: -5px;
+			width: 9px;
+			height: 9px;
+			cursor: ne-resize;
+			}
+		
+		/* Northwest */
+		.ui-dialog .ui-resizable-nw {
+			top: -5px;
+			left: -5px;
+			width: 9px;
+			height: 9px;
+			cursor: nw-resize;
+			}
+
+
+
+/* *************************************************************************************************** */
+/* XXII. Session Alert Notice ************************************************************************ */
+/* *************************************************************************************************** */
+div.sessionalertback {
+    position: fixed;
+    top: 0;
+	right: 0;
+	bottom: 0;
+    left: 0;
+	z-index: 30000;
+    background-color: rgba(255, 0, 0, 0.20);
+	}
+	#sessionalert {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		z-index: 30001;
+		margin: -125px 0 0 -200px;
+		padding: 10px;
+		width: 100%;
+		max-width: 400px;
+		color: #fff;
+		text-align: center;
+		background-color: rgba(255, 0, 0, 0.75);
+		
+		-webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
+		-moz-box-shadow: 	0 3px 5px rgba(0, 0, 0, 0.25);
+		box-shadow: 		0 3px 5px rgba(0, 0, 0, 0.25);
+		}
+		#sessionalert .sessionalertinside {
+			padding: 20px;
+			background-color: rgba(240, 195, 195, 0.55);
+			}
+			
+			/* Notice Text */
+			#sessionalert .expirationnotice {}
+			
+			/* Time Ticker */
+			#sessionalert .onlinetime {
+				padding: 10px;
+				color: #fff;
+				font-family: monospace;
+				font-size: 40px;
+				font-weight: bold;
+				
+				text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.50);
+				}
+			
+			/* Stay Logged In Button */
+			#sessionalert .actions {}
+				#sessionalert .actions button.button {
+					margin: 0 auto 3px;
+					padding: 6px 15px;
+					width: 100%;
+					max-width: 175px;
+					cursor: pointer;
+					color: #303030;
+					font-size: 12px;
+					text-align: center;
+					overflow: hidden;
+					border: 1px solid #303030;
+					background-color: #f0f0f0;
+					
+					-webkit-box-shadow: 0 5px 15px rgba(222, 222, 222, 0.05) inset;
+					-moz-box-shadow: 	0 5px 15px rgba(222, 222, 222, 0.05) inset;
+					box-shadow: 		0 5px 15px rgba(222, 222, 222, 0.05) inset;
+					-webkit-transition: color 0.05s ease-in-out,
+										border-color 0.05s ease-in-out,
+										background-color 0.05s ease-in-out,
+										-webkit-box-shadow 0.05s ease-in-out;
+					-moz-transition: 	color 0.05s ease-in-out,
+										border-color 0.05s ease-in-out,
+										background-color 0.05s ease-in-out,
+										-moz-box-shadow 0.05s ease-in-out;
+					-ms-transition: 	color 0.05s ease-in-out,
+										border-color 0.05s ease-in-out,
+										background-color 0.05s ease-in-out,
+										-ms-box-shadow 0.05s ease-in-out;
+					-o-transition: 		color 0.05s ease-in-out,
+										border-color 0.05s ease-in-out,
+										background-color 0.05s ease-in-out,
+										-o-box-shadow 0.05s ease-in-out;
+					transition: 		color 0.05s ease-in-out,
+										border-color 0.05s ease-in-out,
+										background-color 0.05s ease-in-out,
+										box-shadow 0.05s ease-in-out;
+					}
+					#sessionalert .actions button.button:hover {
+						color: #000;
+						background-color: #e0e0e0;
+						
+						-webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.10);
+						-moz-box-shadow: 	0 0 3px rgba(0, 0, 0, 0.10);
+						box-shadow: 		0 0 3px rgba(0, 0, 0, 0.10);
+						}
+			
+			/* Description Text */
+			#sessionalert .desc {
+				margin-top: 10px;
+				font-size: 0.80em;
+				line-height: 1.35em;
+				}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+div.drag-drop-container {
+    position: absolute;
+    display: none;
+    padding: 3px;
+    background-color: #1a1a1a;
+    background-color: rgba(26, 26, 26, 0.75);
+    z-index: 1000;
+    border: 1px dotted rgba(255, 255, 255, 0.75);
+    font-size: 12px;
+	}
+	div.drag-drop-container>ul.filenavlist {
+		font-size: 12px;
+		}
+
+body.dragging *, body.dragging.not-droppable * {
+    cursor: not-allowed !important;
+	}
+	body.dragging.droppable * {
+		cursor: pointer !important;
+		}
+	body.dragging.droppable li.subdir.drop-target > div.icon.dir {
+		background-color: #1a1a1a;
+		background-color: rgba(192, 192, 255, 0.75);
+		}
+	body.dragging.not-droppable li.drop-target > div.icon {
+		background-color: #1a1a1a;
+		background-color: rgba(63, 63, 63, 0.75);
+		}
+
+	body.dragging.droppable.droppable-on-editor #mainContent .editor_inside {
+		background-color: rgba(63, 63, 63, 0.75);
+		opacity: 0.75;
+		}
+
+
+
+
+
+
+
+
+/* Classes for new popup */
+.ui-dialog.ui-widget .popup {
+	margin: 0 !important;
+	padding: 10px !important;
+			padding-top: 0 !important;
+	overflow: hidden !important;
+	}
+	.ui-dialog.ui-widget .popup > iframe {
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		height: 100%;
+		border: 0;
+		}
+.ui-dialog .popup {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	}
+
+
+@media print {
+    body {
+    }
+    .ace_editor {
+        position: absolute !important;
+        top: 0;
+        left: 0;
+		z-index: 99999;
+        margin: 0 !important;
+        padding: 0;
+        width: 100%;
+    }
+}
+
